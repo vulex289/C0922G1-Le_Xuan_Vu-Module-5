@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head th:replace="~{/home::head}">
+    <meta charset="utf-8"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+    <title>CREATE CUSTOMER</title>
+
+</head>
+<body style="background-image: url('https://cutewallpaper.org/36x/sgwnlkat5/236x/589020981.jpg')">
+<div th:replace="~{/home::nav}"></div>
+<h3 class="text-center">CUSTOMER INFORMATION</h3>
+<a th:href="@{/furama/customer}">
+    <button class="btn btn-primary">Back to CustomerList</button>
+</a>
+<span th:text="${msg}"></span>
+<div class="d-flex justify-content-center">
+    <form class="w-50 border border-2 border-success p-3 rounded" method="post" th:action="@{/customer/edit}"
+          th:object="${customerDto}">
+
+        <input type="text" class="form-control" th:field="*{id}" hidden>
+
+        <div class="mb-3">
+            <label for="recipient-name" class="col-form-label"><p class="text-warning">Tên Khách Hàng:</p></label>
+            <input type="text" class="form-control" th:field="*{name}" id="recipient-name">
+            <p style="color: red" th:if="${#fields.hasErrors()}" th:errors="*{name}"></p>
+        </div>
+        <div class="mb-3">
+            <label for="recipient-name" class="col-form-label"><p class="text-warning">Ngày Sinh</p></label>
+            <input type="date" th:min="${minAge}" th:max="${maxAge}" class="form-control" th:field="*{dateOfBirth}">
+            <p style="color: red" th:if="${#fields.hasErrors()}" th:errors="*{dateOfBirth}"></p>
+        </div>
+        <div class="mb-3">
+            <label class="form-label d-block me-4"><p class="text-warning"> Giới tính</p></label>
+            <div class="form-check">
+                <input th:value="0" th:field="*{gender}" class="form-check-input" type="radio" name="flexRadioDefault"
+                       id="flexRadioDefault1">
+                <label class="form-check-label" for="flexRadioDefault1">
+                    <p class="text-warning">Male</p>
+                </label>
+            </div>
+            <div class="form-check">
+                <input th:value="1" th:field="*{gender}" class="form-check-input" type="radio" name="flexRadioDefault"
+                       id="flexRadioDefault2" checked>
+                <label class="form-check-label" for="flexRadioDefault2">
+                    <p class="text-warning"> Female</p>
+                </label>
+            </div>
+        </div>
+        <div class="mb-3">
+            <label for="recipient-name" class="col-form-label"><p class="text-warning">CMND</p></label>
+            <input required type="text" class="form-control" th:field="*{idCard}">
+            <p style="color: red" th:if="${#fields.hasErrors()}" th:errors="*{idCard}"></p>
+        </div>
+        <div class="mb-3">
+            <label for="recipient-name" class="col-form-label"><p class="text-warning">Số điện thoại</p></label>
+            <input type="text" class="form-control" th:field="*{phoneNumber}">
+            <p style="color: red" th:if="${#fields.hasErrors()}" th:errors="*{phoneNumber}"></p>
+        </div>
+        <div class="mb-3">
+            <label for="recipient-name" class="col-form-label"><p class="text-warning">Email</p></label>
+            <input type="text" class="form-control" th:field="*{email}">
+            <p style="color: red" th:if="${#fields.hasErrors()}" th:errors="*{email}"></p>
+        </div>
+        <div class="mb-3">
+            <label for="recipient-name" class="col-form-label"><p class="text-warning">Địa chỉ</p></label>
+            <input type="text" class="form-control" th:field="*{address}">
+            <p style="color: red" th:if="${#fields.hasErrors()}" th:errors="*{address}"></p>
+        </div>
+        <div class="mb-3">
+            <label class="form-label"><p class="text-warning">Loại khách hàng</p></label>
+            <select class="form-select" aria-label="Default select example" th:field="*{customerType}">
+                <option th:each="type: ${customerTypeList}" th:value="${type.id}" th:text="${type.name}"></option>
+            </select>
+        </div>
+        <div class="mb-3 text-center">
+            <input type="submit" id="btnSave"
+                   class=" form-control btn btn-info btn-outline-success btn-sm border border-2 border-success text-dark "
+                   value="SAVE">
+        </div>
+    </form>
+</div>
+<footer th:replace="~{/home::footer}"></footer>
+</body>
+<script>
+    // let REGEX_PHONE_NUMBER = /((090)|(091)|([(]84[)]+090)|([(]84[)][+]091))\d{7}$/;
+    // let REGEX_EMAIL = /^\w+[@](\w+.\w+){1,2}$/;
+    // let REGEX_CMND = /^[1-9]\d{8}$/;
+    // function checkName(name,regName) {
+    //     let checkedName = regName.exec(name);
+    //     if (!checkedName) {
+    //         document.getElementById("errorName").innerText = "Chưa đúng định dạng"
+    //         document.getElementById("btnSave").disabled = true;
+    //     } else {
+    //         document.getElementById("btnSave").disabled = false;
+    //         document.getElementById("errorName").innerText = ""
+    //     }
+    // }
+    // function checkEmail(name,regName) {
+    //     let checkedName = regName.exec(name);
+    //     if (!checkedName) {
+    //         document.getElementById("errorEmail").innerText = "Email sai định dạng"
+    //         document.getElementById("btnSave").disabled = true;
+    //     } else {
+    //         document.getElementById("btnSave").disabled = false;
+    //         document.getElementById("errorEmail").innerText = ""
+    //     }
+    // }
+    // function checkCMND(name,regName) {
+    //     let checkedName = regName.exec(name);
+    //     if (!checkedName) {
+    //         document.getElementById("errorCMND").innerText = "CMND sai định dạng"
+    //         document.getElementById("btnSave").disabled = true;
+    //     } else {
+    //         document.getElementById("btnSave").disabled = false;
+    //         document.getElementById("errorCMND").innerText = ""
+    //     }
+    // }
+</script>
+</html>
