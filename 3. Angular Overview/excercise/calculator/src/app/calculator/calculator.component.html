@@ -1,0 +1,26 @@
+<h3>calculator works!</h3>
+<div class="form-group">
+  <label for="num1">Number 1</label>
+  <input type="text" #num1
+         class="form-control" name="" id="num1" aria-describedby="helpId" placeholder="">
+</div>
+<div class="form-group">
+  <label for="num2">Number 2</label>
+  <input type="text" #num2
+         class="form-control" name="" id="num2" aria-describedby="helpId" placeholder="">
+</div>
+
+<button class="btn-primary" (click)="sum(num1.value,num2.value)">
+   +
+</button>
+<button class="btn-primary" (click)="sub(num1.value,num2.value)">
+   -
+</button>
+<button class="btn-primary" (click)="multi(num1.value,num2.value)">
+  *
+</button>
+<button class="btn-primary" (click)="divide(num1.value,num2.value)">
+  /
+</button>
+<p>Kết quả: {{result}}</p>
+
