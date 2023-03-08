@@ -1,0 +1,548 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8"/>
+  <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+
+  <title>FURAMA_RESORT</title>
+
+  <style type="text/css">
+    h3 {
+      text-align: center;
+      background-color: lightsteelblue;
+      color: white;
+      padding: 10px 0 10px 20px;
+    }
+
+    h1 {
+      font-family: Helvetica;
+      color: white;
+    }
+
+    footer {
+      margin: 10px 0;
+    }
+
+    #furama {
+      text-align: center;
+      font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+      border-collapse: collapse;
+      width: 100%;
+    }
+
+    #imgtop {
+      background-image: url("https://smartrealtors.vn/wp-content/themes/smr/assets/images/examples/bg-single.jpg");
+    }
+
+    nav {
+
+      background-size: 100%;
+      background-image: url("https://cutewallpaper.org/21x/hianxltb9/Fall-Wallpaper-Hd-Photo-Full-Hd-Navratri-Background-.jpg");
+      background-attachment: fixed;
+    }
+
+    #furama td, #furama th {
+      border: 1px solid #ddd;
+      padding: 8px;
+    }
+
+    #furama tr:nth-child(even) {
+      background-color: #f2f2f2;
+    }
+
+    #furama tr:hover {
+      background-color: #ddd;
+    }
+
+    #furama th {
+      padding-top: 12px;
+      padding-bottom: 12px;
+      background-color: dimgray;
+      color: white;
+      text-align: center;
+    }
+
+    input[type=text], input[type=email], input[type=number], select, option {
+      width: 100%;
+      padding: 12px 0px;
+      margin: 8px 0;
+      display: inline-block;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      box-sizing: border-box;
+    }
+
+    p {
+      font-family: Century;
+      font-size: 17px;
+    }
+
+    input[type=submit] {
+      width: 300px;
+      background-color: #4CAF50;
+      color: white;
+      padding: 14px 20px;
+      margin: 8px 0;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+      text-align: center;
+    }
+
+    input:invalid {
+      border: 1px solid red;
+    }
+
+    input:valid {
+      border: 1px solid green;
+    }
+
+    input[type=submit]:hover {
+      background-color: #45a049;
+    }
+
+    .notify span {
+      font-size: 15px;
+      color: blue;
+    }
+  </style>
+</head>
+
+<body style="background-image: url('https://furamavietnam.com/wp-content/uploads/2018/08/BG2.jpg')">
+<div class="container-fluid">
+  <div class="row sticky">
+    <nav class="navbar navbar-expand-lg bg-body-tertiary">
+      <div class="container-fluid ">
+        <div class="col-md-2 ms-3">
+          <a class="navbar-brand text-white" href="/furama"><img
+            src="https://img.icons8.com/ios-glyphs/1x/home-page.png">HOME</a>
+        </div>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse col-md-8 justify-content-center" id="navbarSupportedContent">
+          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+            <li class="nav-item dropdown ms-5">
+              <a class="nav-link dropdown-toggle text-white"  href="#" role="button" data-bs-toggle="dropdown"
+                 aria-expanded="false">
+                <b>EMPLOYEE</b>
+              </a>
+              <ul class="dropdown-menu">
+                <li><a class="dropdown-item">LIST EMPLOYEE</a></li>
+              </ul>
+            </li>
+            <li class="nav-item dropdown ms-5">
+              <a class="nav-link dropdown-toggle text-white "  role="button"
+                 data-bs-toggle="dropdown"
+                 aria-expanded="false">
+                <b>CUSTOMER</b>
+              </a>
+              <ul class="dropdown-menu">
+                <li><a class="dropdown-item ">LIST COSTUMER</a></li>
+                <li><a class="dropdown-item ">ADD CUSTOMER</a></li>
+              </ul>
+            </li>
+            <li class="nav-item dropdown ms-5">
+              <a class="nav-link dropdown-toggle text-white" href="#" role="button"
+                 data-bs-toggle="dropdown"
+                 aria-expanded="false">
+                <b>FACILITY</b>
+              </a>
+              <ul class="dropdown-menu">
+                <li><a class="dropdown-item">LIST FACILITY</a></li>
+              </ul>
+            </li>
+            <li class="nav-item dropdown ms-5">
+              <a class="nav-link dropdown-toggle text-white" href="#" role="button"
+                 data-bs-toggle="dropdown"
+                 aria-expanded="false">
+                <b>CONTRACT</b>
+              </a>
+              <ul class="dropdown-menu">
+                <li><a class="dropdown-item ">LIST CONTRACT</a></li>
+              </ul>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+  </div>
+  <div class="row" style="position: relative;">
+    <img style="height: 250px;" src="https://www.furama.com/images/bkk_41.jpg" alt="your image description">
+    <div style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); z-index: 1;">
+      <h1 style="text-align: center;color: white; line-height: 200px;">ROOMS && SUITES</h1>
+    </div>
+  </div>
+  <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#addFacility">ADD NEW FACILITY
+  </button>
+  <div class="row mt-5 mx-3">
+    <div class="col-4">
+      <div class="card " style="width: 30rem;">
+        <a><img
+          src="https://furamavietnam.com/wp-content/uploads/2018/03/Vietnam_Danang_Furama_Ocean-Suite-Feature-370x239.jpg"
+          class="card-img-top" alt="..."></a>
+        <div class="card-body ">
+          <h4 class="card-title">OCEAN SUITE</h4>
+          <p class="card-text">Room size: 85.8 m2</p>
+        </div>
+        <div class="text-center">
+          <button data-bs-toggle="modal" data-bs-target="#editFacility" type="button" class="btn btn-warning">
+            <img src="https://img.icons8.com/ios-glyphs/1x/edit.png">
+          </button>
+          <button type="button" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#remove">
+            <img src="https://img.icons8.com/ios-glyphs/1x/delete-forever.png">
+          </button>
+        </div>
+      </div>
+    </div>
+    <div class="col-4">
+      <div class="card " style="width: 30rem;">
+        <a><img
+          src="https://furamavietnam.com/wp-content/uploads/2018/03/Vietnam_Danang_Furama_Garden-Superior-TwinBed-1-F-370x239.jpg"
+          class="card-img-top" alt="..."></a>
+        <div class="card-body ">
+          <h4 class="card-title">GARDEN SUPERIOR</h4>
+          <p class="card-text">Room size: 40.1 m2</p>
+        </div>
+        <div class="text-center">
+          <button data-bs-toggle="modal" data-bs-target="#editFacility" type="button" class="btn btn-warning">
+            <img src="https://img.icons8.com/ios-glyphs/1x/edit.png">
+          </button>
+          <button type="button" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#remove">
+            <img src="https://img.icons8.com/ios-glyphs/1x/delete-forever.png">
+          </button>
+        </div>
+      </div>
+    </div>
+    <div class="col-4">
+      <div class="card " style="width: 30rem;">
+        <a><img
+          src="https://furamavietnam.com/wp-content/uploads/2018/03/Furama_Ocean_Deluxe-2-370x239.jpg"
+          class="card-img-top" alt="..."></a>
+        <div class="card-body ">
+          <h4 class="card-title">OCEAN DELUXE</h4>
+          <p class="card-text">Room size: 43.7 m2</p>
+        </div>
+        <div class="text-center">
+          <button data-bs-toggle="modal" data-bs-target="#editFacility" type="button" class="btn btn-warning">
+            <img src="https://img.icons8.com/ios-glyphs/1x/edit.png">
+          </button>
+          <button type="button" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#remove">
+            <img src="https://img.icons8.com/ios-glyphs/1x/delete-forever.png">
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="row mt-5 mx-3">
+    <div class="col-4">
+      <div class="card " style="width: 30rem;">
+        <a><img
+          src="https://cf.bstatic.com/xdata/images/hotel/max1024x768/407563254.jpg?k=a9ae6471875bdcfd358322ca48fd58480405e50eebb53357abb22090949ad3d9&o=&hp=1"
+          class="card-img-top" alt="..."></a>
+        <div class="card-body ">
+          <h4 class="card-title">SUPERIOR DELUXE</h4>
+          <p class="card-text">Room size: 43.7 m2</p>
+        </div>
+        <div class="text-center">
+          <button data-bs-toggle="modal" data-bs-target="#editFacility" type="button" class="btn btn-warning">
+            <img src="https://img.icons8.com/ios-glyphs/1x/edit.png">
+          </button>
+          <button type="button" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#remove">
+            <img src="https://img.icons8.com/ios-glyphs/1x/delete-forever.png">
+          </button>
+        </div>
+      </div>
+    </div>
+    <div class="col-4">
+      <div class="card " style="width: 30rem;">
+        <a><img
+          src="https://cf.bstatic.com/xdata/images/hotel/max1024x768/384534133.jpg?k=fa2e69e66c6aa74e28fbb36fa06360927752feef7a5d6286ff446fbc2b4ec52c&o=&hp=1"
+          class="card-img-top" alt="..."></a>
+        <div class="card-body ">
+          <h4 class="card-title">PRESIDENTIAL SUITE</h4>
+          <p class="card-text">Room size: 50 m2</p>
+        </div>
+        <div class="text-center">
+          <button data-bs-toggle="modal" data-bs-target="#editFacility" type="button" class="btn btn-warning">
+            <img src="https://img.icons8.com/ios-glyphs/1x/edit.png">
+          </button>
+          <button type="button" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#remove">
+            <img src="https://img.icons8.com/ios-glyphs/1x/delete-forever.png">
+          </button>
+        </div>
+      </div>
+    </div>
+    <div class="col-4">
+      <div class="card " style="width: 30rem;">
+        <a><img
+          src="https://furamavietnam.com/wp-content/uploads/2018/08/Vietnam_Danang_Furama_Villas_Pool_Villas-F-370x239.jpg"
+          class="card-img-top" alt="..."></a>
+        <div class="card-body ">
+          <h4 class="card-title">POOL VILLA</h4>
+          <p class="card-text">Room size: 200 m2</p>
+        </div>
+        <div class="text-center">
+          <button data-bs-toggle="modal" data-bs-target="#editFacility" type="button" class="btn btn-warning">
+            <img src="https://img.icons8.com/ios-glyphs/1x/edit.png">
+          </button>
+          <button type="button" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#remove">
+            <img src="https://img.icons8.com/ios-glyphs/1x/delete-forever.png">
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="row mt-5 mx-3">
+    <div class="col-6">
+      <div class="card text-light  mb-3"
+           style="max-width: 50rem; background-image: url('https://cutewallpaper.org/21x/hianxltb9/Shop.jpg')">
+        <div class="card-body">
+          <h2 class="card-header">Điểm nổi bật của chỗ nghỉ</h2>
+          <p class="card-text">
+          <h4> Hoàn hảo cho kỳ nghỉ 1 đêm!</h4>
+          <p class="card-text"> +Địa điểm hàng đầu: Được khách gần đây đánh giá cao (8,8 điểm)</p>
+          <h4> Thông tin về bữa sáng</h4>
+          <p class="card-text"> +Kiểu Á, Tự chọn</p>
+          <h4 class="card-text"> Các lựa chọn với:</h4>
+          <p class="card-text"> +Nhìn ra vườn</p>
+          <p class="card-text"> +Có chỗ đậu xe riêng miễn phí trong khuôn viên</p>
+          <h4 class="card-text"> Hoạt động:</h4>
+          <p class="card-text"> +Trung tâm thể dục</p>
+          <p class="card-text"> +Phòng chơi game</p>
+          <p class="card-text"> +Trung tâm Spa & chăm sóc sức khoẻ</p>
+        </div>
+      </div>
+    </div>
+    <div class="col-6">
+      <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="true">
+        <div class="carousel-indicators">
+          <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0"
+                  class="active" aria-current="true" aria-label="Slide 1"></button>
+          <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1"
+                  aria-label="Slide 2"></button>
+          <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2"
+                  aria-label="Slide 3"></button>
+          <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="3"
+                  aria-label="Slide 4"></button>
+          <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="4"
+                  aria-label="Slide 5"></button>
+        </div>
+        <div class="carousel-inner">
+          <div class="carousel-item active">
+            <img src="https://cf.bstatic.com/xdata/images/hotel/max1024x768/401857221.jpg?k=1680ff60bf4bd30b1e91ed4bac3f95c836fb3aa7b251792d6b3edd6cb6b352f4&o=&hp=1"
+                 class="d-block w-100" alt="...">
+          </div>
+          <div class="carousel-item ">
+            <img src="https://cf.bstatic.com/xdata/images/hotel/max1024x768/357073052.jpg?k=2d515c0cfff61db6664c259628efbf7de46a4b47443a09499aa1ee55c5c69d70&o=&hp=1"
+                 class="card-img-top">
+          </div>
+          <div class="carousel-item">
+            <img src="https://cf.bstatic.com/xdata/images/hotel/max1024x768/356104311.jpg?k=1d5acaa0a88437430a0f4e545253bad6e142054c6c1a2614777c000842f49394&o=&hp=1"
+                 class="d-block w-100" alt="...">
+          </div>
+          <div class="carousel-item">
+            <img src="https://cf.bstatic.com/xdata/images/hotel/max1024x768/356104177.jpg?k=c2cfa8405b56e0186e6774dca7c8267a795ff2a7b02f7adaacb003c7210b53a3&o=&hp=1"
+                 class="d-block w-100" alt="...">
+          </div>
+          <div class="carousel-item">
+            <img src="https://cf.bstatic.com/xdata/images/hotel/max1024x768/357073054.jpg?k=cd146f8ee89dc15f9dd81ee8033e84df588d5bba21f795ad1d593160bb32f4af&o=&hp=1"
+                 class="d-block w-100" alt="...">
+          </div>
+        </div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators"
+                data-bs-slide="prev">
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Previous</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators"
+                data-bs-slide="next">
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Next</span>
+        </button>
+      </div>
+    </div>
+  </div>
+  <div class="row mt-5">
+    <footer>
+      <div class="blockquote-footer align-content-center container-fluid bg-primary text-center">
+        <p class="text-light">FURAMA - FURAMA HOTELS INTERNATIONAL.
+        </p>
+        <p class="text-light">OUR HOTELS | PROMOTIONS | MEETINGS & OCCASIONS | BRAND STORY | CORPORATE INFO
+          | MEDIA CENTRE | LOYALTY</p>
+        <p class="text-light">@LE_XUAN_VU_2023
+        </p>
+      </div>
+    </footer>
+  </div>
+</div>
+<!-------------------------------XÓA------------------------------>
+<div class="modal fade" id="remove" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <form method="post" >
+      <div class="modal-content">
+        <div class="modal-header">
+          <h1 class="modal-title fs-5">DELETE FACILITY</h1>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <input type="text" name="idDelete" hidden id="idDelete">
+          <strong>Facility: </strong>
+          <span id="nameDelete" class="text-danger"></span>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">CANCEL</button>
+          <button type="submit" class="btn btn-primary">OK</button>
+        </div>
+      </div>
+    </form>
+  </div>
+</div>
+
+<!------------------------------------------------ThÊM------------------------------------>
+<div class="modal fade" id="addFacility" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h1 class="modal-title fs-5">Thêm Mới Dịch Vụ</h1>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <form class="w-100 border border-2 border-success p-3  rounded"
+              method="post" >
+          <input type="text" id="facilityTypeId" hidden>
+          <button id="villa" type="button" class="btn btn-outline-warning" onclick='addVilla()'><p>+Add
+            Villa</p>
+          </button>
+          <button type="button" class="btn btn-outline-primary" onclick='addHouse()'><p id="house">+Add
+            House</p>
+          </button>
+          <button type="button" class="btn btn-outline-danger" onclick='addRoom()'><p id="room">+Add Room</p>
+          </button>
+          <div class="mb-3">
+            <label for="recipient-name" class="col-form-label">Tên Dịch Vụ:</label>
+            <input type="text" class="form-control"
+                   id="recipient-name">
+          </div>
+          <div class="mb-3">
+            <label for="recipient-name" class="col-form-label">Diện tích</label>
+            <input type="number" class="form-control">
+          </div>
+          <div class="mb-3">
+            <label for="recipient-name" class="col-form-label">Giá Tiền</label>
+            <input type="number" class="form-control">
+          </div>
+          <div class="mb-3">
+            <label for="recipient-name" class="col-form-label">Số lượng người tối đa</label>
+            <input type="number" class="form-control">
+          </div>
+          <div class="mb-3">
+            <label class="form-label">Kiểu Thuê</label>
+            <select class="form-select" aria-label="Default select example">
+              <option></option>
+            </select>
+          </div>
+          <div class="mb-3" id="standardRoom">
+            <label for="recipient-name" class="col-form-label">Tiêu Chuẩn Phòng</label>
+            <input type="text" class="form-control">
+            <p style="color: red"></p>
+          </div>
+          <div class="mb-3" id="descriptionOtherConvenience">
+            <label for="recipient-name" class="col-form-label">Mô tả tiện nghi</label>
+            <input type="text" class="form-control">
+          </div>
+          <div class="mb-3" id="poolArea">
+            <label for="recipient-name" class="col-form-label">Diện tích hồ bơi</label>
+            <input type="number" class="form-control">
+          </div>
+          <div class="mb-3" id="numberOfFloors">
+            <label for="recipient-name" class="col-form-label">Số tầng</label>
+            <input required type="number" class="form-control">
+          </div>
+          <div class="mb-3" id="facilityFree">
+            <label for="recipient-name" class="col-form-label">Dich vụ miễn phí</label>
+            <input type="text" class="form-control">
+          </div>
+          <div class="mb-3 ">
+            <input type="submit" id="btnSave"
+                   class=" form-control btn btn-info btn-outline-success btn-sm border border-2 border-success text-dark "
+                   value="SAVE">
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!----------------------------------------------Sửa--------------------------------------------->
+<div class="modal fade" id="editFacility" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h1 class="modal-title fs-5">Sửa Thông Tin Dịch Vụ</h1>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <form class="w-100 border border-2 border-success p-3  rounded"
+              method="post">
+          <input type="text" id="newFacilityTypeId" hidden>
+          <input type="text"  id="id" hidden>
+          <div class="mb-3">
+            <label for="recipient-name" class="col-form-label">Tên Dịch Vụ:</label>
+            <input type="text" id="newName" class="form-control">
+          </div>
+          <div class="mb-3">
+            <label for="recipient-name" class="col-form-label">Diện tích</label>
+            <input id="newArea" type="number" class="form-control">
+          </div>
+          <div class="mb-3">
+            <label for="recipient-name" class="col-form-label">Giá Tiền</label>
+            <input type="number" class="form-control" id="newCost" >
+          </div>
+          <div class="mb-3">
+            <label for="recipient-name" class="col-form-label">Số lượng người tối đa</label>
+            <input type="number" class="form-control"
+                   id="newMaxPeople">
+          </div>
+          <div class="mb-3">
+            <label class="form-label">Kiểu Thuê</label>
+            <select id="newRentType" class="form-select" aria-label="Default select example">
+              <option></option>
+            </select>
+          </div>
+          <div class="mb-3" id="editStandardRoom">
+            <label for="recipient-name" class="col-form-label">Tiêu Chuẩn Phòng</label>
+            <input type="text" id="newStandardRoom1" class="form-control">
+          </div>
+          <div class="mb-3" id="editDescriptionOtherConvenience">
+            <label for="recipient-name" class="col-form-label">Mô tả tiện nghi</label>
+            <input type="text" id="newDescriptionOtherConvenience1" class="form-control">
+          </div>
+          <div class="mb-3" id="editPoolArea">
+            <label for="recipient-name" class="col-form-label">Diện tích hồ bơi</label>
+            <input id="newPoolArea1" type="number" class="form-control">
+          </div>
+          <div class="mb-3" id="editNumberOfFloors">
+            <label for="recipient-name" class="col-form-label">Số tầng</label>
+            <input id="newNumberOfFloors1" required type="number" class="form-control">
+          </div>
+          <div class="mb-3" id="editFacilityFree">
+            <label for="recipient-name" class="col-form-label">Dich vụ miễn phí</label>
+            <input id="newFacilityFree1" type="text" class="form-control">
+          </div>
+          <div class="mb-3 ">
+            <input type="submit"
+                   class=" form-control btn btn-info btn-outline-success btn-sm border border-2 border-success text-dark "
+                   value="SAVE">
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+</body>
+</html>
