@@ -1,0 +1,87 @@
+
+<div class="row container-fluid">
+  <h1 class="text-center my-3">LIST CUSTOMER </h1>
+  <div class="row my-1">
+    <div class="col-md-6"></div>
+    <div class="col-md-6">
+      <form class="d-flex mx-3" role="search">
+        <input class="form-control me-2" name="nameSearch" type="search" placeholder="nameSearch"
+               aria-label="Search">
+        <input class="form-control me-2" name="email" type="search" placeholder="SearchByEmail" aria-label="Search">
+        <select name="customerTypeId">
+          <option value="" ></option>
+          <option></option>
+        </select>
+        <button class="btn btn-outline-success" type="submit">Search</button>
+      </form>
+    </div>
+  </div>
+  <a >
+    <button class="btn btn-primary">ADD NEW CUSTOMER</button>
+  </a>
+  <table class="table table-striped table-bordered text-center" style="width:100%" id="furama">
+    <thead>
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">Name</th>
+      <th scope="col">Date Of Birth</th>
+      <th scope="col">Gender</th>
+      <th scope="col">Id-card</th>
+      <th scope="col">Phone-Number</th>
+      <th scope="col">Email</th>
+      <th scope="col">Address</th>
+      <th scope="col">CustomerType</th>
+      <th scope="col">Edit</th>
+      <th scope="col">Delete</th>
+    </tr>
+    </thead>
+    <tbody class="table-group-divider">
+    <tr>
+      <td ></td>
+      <td ></td>
+      <td ></td>
+      <td ></td>
+      <td ></td>
+      <td ></td>
+      <td ></td>
+
+      <td>
+        <a>
+          <button type="button" class="btn btn-warning"><img src="https://img.icons8.com/ios-glyphs/1x/edit.png">
+          </button>
+        </a>
+      </td>
+      <td>
+        <!-- Button trigger modal -->
+        <button type="button" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#exampleModal"
+                onclick="deleteCustomer('${customer.id}','${customer.name}')">
+          <img src="https://img.icons8.com/ios-glyphs/1x/delete-forever.png">
+        </button>
+      </td>
+    </tr>
+    </tbody>
+  </table>
+  <!-- Modal -->
+  <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <form method="post" >
+        <div class="modal-content">
+          <div class="modal-header">
+            <h1 class="modal-title fs-5" id="exampleModalLabel">DELETE CUSTOMER</h1>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+            <input type="text" name="idDelete" hidden id="idDelete">
+            <strong>Customer: </strong>
+            <span id="nameDelete" class="text-danger"></span>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">CANCEL</button>
+            <button type="submit" class="btn btn-primary">OK</button>
+          </div>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
+

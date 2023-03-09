@@ -7,6 +7,10 @@ import { FooterComponent } from './footer/footer.component';
 import { HeaderComponent } from './header/header.component';
 import { FacilityListComponent } from './facility-list/facility-list.component';
 import { HomeComponent } from './home/home.component';
+import { CustomerCreateComponent } from './customer-create/customer-create.component';
+import { CustomerEditComponent } from './customer-edit/customer-edit.component';
+import { CustomerListComponent } from './customer-list/customer-list.component';
+import { ContractListComponent } from './contract-list/contract-list.component';
 
 @NgModule({
   declarations: [
@@ -14,7 +18,11 @@ import { HomeComponent } from './home/home.component';
     FooterComponent,
     HeaderComponent,
     FacilityListComponent,
-    HomeComponent
+    HomeComponent,
+    CustomerCreateComponent,
+    CustomerEditComponent,
+    CustomerListComponent,
+    ContractListComponent
   ],
   imports: [
     BrowserModule,
