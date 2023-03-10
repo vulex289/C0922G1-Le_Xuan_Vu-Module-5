@@ -1,0 +1,75 @@
+<div class="card">
+<h3 class="text-center">REGISTER</h3>
+  <form [formGroup]="registerForm" (ngSubmit)="addRegister()">
+    <div class="form-group">
+      <label for="email">Email</label>
+      <input type="text"
+             class="form-control" name="" id="email" formControlName="email" aria-describedby="helpId" placeholder="">
+      <!--    <p *ngIf="registerForm.controls.email.touched && registerForm.controls.email?.errors?.email" class="text-danger">Bắt buộc</p>-->
+      <div *ngIf="email.invalid && (email.dirty ||email.touched)">
+        <div [hidden]="!email.errors.required &&!email.errors.email">
+          <p class="text-danger">Bạn không được để trống</p>
+        </div>
+      </div>
+    </div>
+    <div class="form-group">
+      <label for="password">password</label>
+      <input type="password"
+             class="form-control" formControlName="password" id="password" aria-describedby="helpId" placeholder="">
+    </div>
+    <p *ngIf="registerForm.controls.password.touched  && registerForm.controls.password?.errors?.required" class="text-danger">Bạn không được để trống</p>
+    <p *ngIf="registerForm.controls.password.touched && registerForm.controls.password?.errors?.minlength" class="text-danger">Bạn phải nhập hơn 6 kí tự</p>
+<!--      <div *ngIf="password.touched">-->
+<!--        <div [hidden]="!getRegisterPassword().required">-->
+<!--          <p class="text-danger">Bạn không được để trống</p>-->
+<!--        </div>-->
+<!--        <div [hidden]="password.dirty && !getRegisterPassword().minlength">-->
+<!--          <p class="text-danger">Bạn phải nhập hơn 6 kí tự</p>-->
+<!--        </div>-->
+<!--      </div>-->
+    <div class="form-group">
+      <label for="password" f>Confirm password</label>
+      <input type="password"
+             class="form-control" formControlName="confirmPassword"  aria-describedby="helpId" placeholder="">
+      <p *ngIf="registerForm.controls.confirmPassword.touched  && registerForm.controls.confirmPassword?.errors?.required" class="text-danger">Bạn không được để trống</p>
+      <p *ngIf="registerForm.controls.confirmPassword.touched  && registerForm.controls.confirmPassword.value == registerForm.controls.password.value" class="text-danger">Bạn nhập đúng mật khẩu</p>
+
+    </div>
+    <div class="form-group">
+        <label for="country">Country </label>
+        <select formControlName="country" id="country" name="country">
+          <option [ngValue]="c.id"   *ngFor="let c of countryList">
+            {{c.name}}
+          </option>
+        </select>
+      <p *ngIf="registerForm.controls.country.touched  && registerForm.controls.country?.errors?.nullError" class="text-danger">Bạn không được để trống</p>
+
+    </div>
+    <div class="form-group">
+      <label for="age">age</label>
+      <input type="number"
+             class="form-control" name="" id="age" formControlName="age" aria-describedby="helpId" placeholder="">
+      <p *ngIf="registerForm.controls.age.touched  && registerForm.controls.age?.errors?.required" class="text-danger">Bạn không được để trống</p>
+      <p *ngIf="registerForm.controls.age.touched  && registerForm.controls.age?.errors?.min" class="text-danger">Bạn phải nhập lớn hơn 18 tuổi</p>
+
+    </div>
+    <div class="form-check">
+      <label class="form-check-label">
+        <input type="radio" formControlName="gender" class="form-check-input">Male</label>
+    </div>
+    <div class="form-check">
+      <label class="form-check-label">
+        <input type="radio" class="form-check-input" formControlName="gender" value="checkedValue">
+        Female
+      </label>
+      <p *ngIf="registerForm.controls.gender.touched  && registerForm.controls.gender?.errors?.nullError" class="text-danger">Bạn không được để trống</p>
+    </div>
+    <div class="form-group">
+      <label for="phone">Phone</label>
+      <input type="text" formControlName="phone"
+             class="form-control" id="phone" aria-describedby="helpId" placeholder="">
+      <p *ngIf="registerForm.controls.phone.touched  && registerForm.controls.phone?.errors?.pattern" class="text-danger">Bạn phải nhập bắt buộc và phải có định dạng bao gồm: bắt đầu với +84, và theo sau là 9 đến 10 chữ số</p>
+    </div>
+    <button [disabled]="registerForm.invalid"  type="submit" class="btn btn-primary">Register</button>
+  </form>
+</div>
