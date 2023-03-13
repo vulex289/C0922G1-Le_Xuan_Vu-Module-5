@@ -36,14 +36,23 @@
     </tr>
     </thead>
     <tbody class="table-group-divider">
-    <tr>
-      <td ></td>
-      <td ></td>
-      <td ></td>
-      <td ></td>
-      <td ></td>
-      <td ></td>
-      <td ></td>
+    <tr *ngFor="let customer of customers, index as i">
+      <td>{{i+1}}</td>
+     <td>{{customer.name}}</td>
+     <td>{{customer.dateOfBirth}}</td>
+     <td>
+       <ng-container *ngIf="customer.gender === true">
+         Nam
+       </ng-container>
+       <ng-container *ngIf="!(customer.gender === true)">
+         Nữ
+       </ng-container>
+     </td>
+     <td>{{customer.idCard}}</td>
+     <td>{{customer.phoneNumber}}</td>
+     <td>{{customer.email}}</td>
+     <td>{{customer.address}}</td>
+     <td>{{customer.customerTypeId.name}}</td>
 
       <td>
         <a>
