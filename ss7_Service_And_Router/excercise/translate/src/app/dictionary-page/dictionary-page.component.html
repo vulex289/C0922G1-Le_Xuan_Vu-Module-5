@@ -1,0 +1,12 @@
+<h2>dictionary-page!</h2>
+  <ul>
+    <li *ngFor="let word of wordArr">
+      <a [routerLink]="['',word.word]">{{word.word}}</a>
+    </li>
+  </ul>
+
+
+<router-outlet></router-outlet>
+<!--cách 2-->
+<!--<h1>DICTIONARY</h1>-->
+<!--<div *ngFor="let item of wordArr"><a routerLink="/dictionary/detail/{{item.word}}">- {{item.word}}</a></div>-->

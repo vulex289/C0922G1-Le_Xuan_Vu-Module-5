@@ -1,0 +1,39 @@
+<a routerLink=""><button>Back to productList</button></a>
+<ul>
+  <li *ngFor="let product of products">
+    <a routerLink="/product/edit/{{product.id}}">{{product.name}}</a>
+  </li>
+</ul>
+<p class="text-primary">{{message}}</p>
+<form [formGroup]="productEdit" (ngSubmit)="onEdit()"  >
+  <h3 class="text-center">PRODUCT INFORMATION</h3>
+  <div class="form-group">
+    <label for="id">Id</label>
+    <input type="text" formControlName="id"
+           class="form-control" name="" id="id" aria-describedby="helpId" placeholder="">
+    <p class="text-danger" *ngIf="productEdit.controls.id.touched && productEdit.controls.id?.errors?.required" >Bạn không được để trống</p>
+  </div>
+  <div class="form-group">
+    <label for="name">Name</label>
+    <input type="text" formControlName="name"
+           class="form-control" name="" id="name" aria-describedby="helpId" placeholder="">
+  </div>
+  <p class="text-danger" *ngIf="productEdit.controls.name.touched && productEdit.controls.name?.errors?.required" >Bạn không được để trống</p>
+
+  <div class="form-group">
+    <label for="price">Price</label>
+    <input type="text" formControlName="price"
+           class="form-control" name="" id="price" aria-describedby="helpId" placeholder="">
+  </div>
+  <p class="text-danger" *ngIf="productEdit.controls.price.touched && productEdit.controls.price?.errors?.required" >Bạn không được để trống</p>
+  <p class="text-danger" *ngIf="productEdit.controls.price.dirty && productEdit.controls.price?.errors?.pattern" >Bạn không được nhập chữ</p>
+
+  <div class="form-group">
+    <label for="description">Description</label>
+    <input type="text" formControlName="description"
+           class="form-control" name="" id="description" aria-describedby="helpId" placeholder="">
+  </div>
+  <p class="text-danger" *ngIf="productEdit.controls.description.touched && productEdit.controls.description?.errors?.required" >Bạn không được để trống</p>
+
+  <button [disabled]="!productEdit.valid" type="submit" class="btn btn-primary">EDIT</button>
+</form>
