@@ -1,102 +1,81 @@
 
-<div class="row container-fluid" style="background-image: url('https://cutewallpaper.org/36x/sgwnlkat5/236x/589020981.jpg')">
-<h3 class="text-center">CUSTOMER INFORMATION</h3>
-<a>
-  <button class="btn btn-primary">Back to CustomerList</button>
-</a>
-<div class="d-flex justify-content-center">
-  <form class="w-50 border border-2 border-success p-3 rounded" method="post">
-
-    <input type="text" class="form-control" hidden>
-
-    <div class="mb-3">
-      <label for="recipient-name" class="col-form-label"><p class="text-warning">Tên Khách Hàng:</p></label>
-      <input type="text" class="form-control" id="recipient-name">
-    </div>
-    <div class="mb-3">
-      <label for="recipient-name" class="col-form-label"><p class="text-warning">Ngày Sinh</p></label>
-      <input type="date" class="form-control">
-    </div>
-    <div class="mb-3">
-      <label class="form-label d-block me-4"><p class="text-warning"> Giới tính</p></label>
-      <div class="form-check">
-        <input class="form-check-input" type="radio" name="flexRadioDefault"
-               id="flexRadioDefault1">
-        <label class="form-check-label" for="flexRadioDefault1">
-          <p class="text-warning">Male</p>
-        </label>
+<div class="row container-fluid" style="background-image: url('https://image.winudf.com/v2/image/Y29tLlJlc29ydHdhbGxwYXBlcnMucGljdHVyZXMuYmFja2dyb3VuZHMucGhvdG9zLmltYWdlcy5oZC5mcmVlLmJlYXV0aWZ1bF9zY3JlZW5fMl8xNTMzODgyMTk0XzA4OQ/screen-2.jpg?fakeurl=1&type=.webp')">
+  <h2 class="text-center">CUSTOMER INFORMATION</h2>
+  <a routerLink="/customer/list">
+    <button class="btn btn-primary">Back to CustomerList</button>
+  </a>
+  <span style="color:red;"></span>
+  <div class="d-flex justify-content-center">
+    <form *ngIf="customerFormEdit" class="w-50 border border-2 border-success p-3 rounded" [formGroup]="customerFormEdit" (ngSubmit)="editCustomer()">
+      <div class="mb-3">
+        <label for="recipient-name" class="col-form-label">Mã Khách Hàng:</label>
+        <input type="text"  class="form-control" formControlName="id" >
+        <p class="text-danger" *ngIf="customerFormEdit.controls.id.touched && customerFormEdit.controls.id?.errors?.required">Bạn không được bỏ trống</p>
+        <p class="text-danger" *ngIf="customerFormEdit.controls.id.dirty && customerFormEdit.controls.id?.errors?.pattern">Bạn phải nhập đúng định dạng MH-XXXX(với x là số)</p>
       </div>
-      <div class="form-check">
-        <input class="form-check-input" type="radio" name="flexRadioDefault"
-               id="flexRadioDefault2" checked>
-        <label class="form-check-label" for="flexRadioDefault2">
-          <p class="text-warning"> Female</p>
-        </label>
+      <div class="mb-3">
+        <label for="recipient-name" class="col-form-label">Tên Khách Hàng:</label>
+        <input type="text" class="form-control" formControlName="name"  id="recipient-name">
+        <p class="text-danger" *ngIf="customerFormEdit.controls.name.touched && customerFormEdit.controls.name?.errors?.required">Bạn không được bỏ trống</p>
       </div>
-    </div>
-    <div class="mb-3">
-      <label for="recipient-name" class="col-form-label"><p class="text-warning">CMND</p></label>
-      <input required type="text" class="form-control">
-    </div>
-    <div class="mb-3">
-      <label for="recipient-name" class="col-form-label"><p class="text-warning">Số điện thoại</p></label>
-      <input type="text" class="form-control">
-    </div>
-    <div class="mb-3">
-      <label for="recipient-name" class="col-form-label"><p class="text-warning">Email</p></label>
-      <input type="text" class="form-control" >
-    </div>
-    <div class="mb-3">
-      <label for="recipient-name" class="col-form-label"><p class="text-warning">Địa chỉ</p></label>
-      <input type="text" class="form-control">
-    </div>
-    <div class="mb-3">
-      <label class="form-label"><p class="text-warning">Loại khách hàng</p></label>
-      <select class="form-select" aria-label="Default select example" >
-        <option ></option>
-      </select>
-    </div>
-    <div class="mb-3 text-center">
-      <input type="submit" id="btnSave"
-             class=" form-control btn btn-info btn-outline-success btn-sm border border-2 border-success text-dark "
-             value="SAVE">
-    </div>
-  </form>
+      <div class="mb-3">
+        <label for="recipient-name" class="col-form-label">Ngày Sinh</label>
+        <input type="date"  class="form-control" formControlName="dateOfBirth">
+      </div>
+      <div class="mb-3">
+        <label class="form-label d-block me-4">Giới tính</label>
+        <div class="form-check">
+          <input class="form-check-input" type="radio" formControlName="gender"  [value]="true"
+                 id="flexRadioDefault1">
+          <label class="form-check-label" for="flexRadioDefault1">
+            Male
+          </label>
+        </div>
+        <div class="form-check">
+          <input  class="form-check-input" type="radio" formControlName="gender"
+                  id="flexRadioDefault2" checked [value]="false"  >
+          <label class="form-check-label" for="flexRadioDefault2">
+            Female
+          </label>
+        </div>
+      </div>
+      <div class="mb-3">
+        <label for="recipient-name" class="col-form-label">CMND</label>
+        <input required type="text" class="form-control" formControlName="idCard">
+        <p class="text-danger" *ngIf="customerFormEdit.controls.idCard.touched && customerFormEdit.controls.idCard?.errors?.required">Bạn không được bỏ trống</p>
+        <p class="text-danger" *ngIf="customerFormEdit.controls.idCard.dirty && customerFormEdit.controls.idCard?.errors?.pattern">Bạn phải nhập đúng định 9 số hoăc 12 số</p>
+
+      </div>
+      <div class="mb-3">
+        <label for="recipient-name" class="col-form-label">Số điện thoại</label>
+        <input type="text" class="form-control" formControlName="phoneNumber">
+        <p class="text-danger" *ngIf="customerFormEdit.controls.phoneNumber.touched && customerFormEdit.controls.phoneNumber?.errors?.required">Bạn không được bỏ trống</p>
+        <p class="text-danger" *ngIf="customerFormEdit.controls.phoneNumber.dirty && customerFormEdit.controls.phoneNumber?.errors?.pattern">Bạn phải nhập đúng định dạng số điện thoại</p>
+      </div>
+      <div class="mb-3">
+        <label for="recipient-name" class="col-form-label">Email</label>
+        <input type="text" class="form-control" formControlName="email">
+        <p class="text-danger" *ngIf="customerFormEdit.controls.email.touched && customerFormEdit.controls.email?.errors?.required">Bạn không được bỏ trống</p>
+        <p class="text-danger" *ngIf="customerFormEdit.controls.email.dirty && customerFormEdit.controls.email?.errors?.email">Bạn phải nhập đúng định dạng email</p>
+      </div>
+      <div class="mb-3">
+        <label for="recipient-name" class="col-form-label">Địa chỉ</label>
+        <input type="text" class="form-control" formControlName="address">
+        <p class="text-danger" *ngIf="customerFormEdit.controls.address.touched && customerFormEdit.controls.address?.errors?.required">Bạn không được bỏ trống</p>
+      </div>
+      <div class="mb-3">
+        <label class="form-label">Loại khách hàng</label>
+        <select class="form-select" aria-label="Default select example" formControlName="customerType">
+          <option *ngFor="let ct of customerTypes" [ngValue]="ct" >{{ct.name}}</option>
+        </select>
+      </div>
+      <div class="mb-3 text-center">
+        <input type="submit" id="btnSave" [disabled]="customerFormEdit.invalid"
+               class=" form-control btn btn-info btn-outline-success btn-sm border border-2 border-success text-dark "
+               value="EDIT">
+      </div>
+    </form>
+  </div>
 </div>
-</div>
-<script>
-  // let REGEX_PHONE_NUMBER = /((090)|(091)|([(]84[)]+090)|([(]84[)][+]091))\d{7}$/;
-  // let REGEX_EMAIL = /^\w+[@](\w+.\w+){1,2}$/;
-  // let REGEX_CMND = /^[1-9]\d{8}$/;
-  // function checkName(name,regName) {
-  //     let checkedName = regName.exec(name);
-  //     if (!checkedName) {
-  //         document.getElementById("errorName").innerText = "Chưa đúng định dạng"
-  //         document.getElementById("btnSave").disabled = true;
-  //     } else {
-  //         document.getElementById("btnSave").disabled = false;
-  //         document.getElementById("errorName").innerText = ""
-  //     }
-  // }
-  // function checkEmail(name,regName) {
-  //     let checkedName = regName.exec(name);
-  //     if (!checkedName) {
-  //         document.getElementById("errorEmail").innerText = "Email sai định dạng"
-  //         document.getElementById("btnSave").disabled = true;
-  //     } else {
-  //         document.getElementById("btnSave").disabled = false;
-  //         document.getElementById("errorEmail").innerText = ""
-  //     }
-  // }
-  // function checkCMND(name,regName) {
-  //     let checkedName = regName.exec(name);
-  //     if (!checkedName) {
-  //         document.getElementById("errorCMND").innerText = "CMND sai định dạng"
-  //         document.getElementById("btnSave").disabled = true;
-  //     } else {
-  //         document.getElementById("btnSave").disabled = false;
-  //         document.getElementById("errorCMND").innerText = ""
-  //     }
-  // }
-</script>
+
 

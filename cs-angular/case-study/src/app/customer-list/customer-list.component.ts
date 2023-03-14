@@ -1,7 +1,9 @@
 import {Component, OnInit} from '@angular/core';
 import {CustomerService} from '../service/customer/customer.service';
-import {ActivatedRoute} from '@angular/router';
 import {Customer} from '../model/customer/customer';
+import {Router} from '@angular/router';
+import Swal from 'sweetalert2';
+
 
 @Component({
   selector: 'app-customer-list',
@@ -10,10 +12,12 @@ import {Customer} from '../model/customer/customer';
 })
 export class CustomerListComponent implements OnInit {
 
-  constructor(private customerService: CustomerService,
-              private activatedRoute: ActivatedRoute) {
+  constructor(private customerService: CustomerService) {
   }
 
+  checkModal: boolean ;
+  idDelete: string;
+  nameDelete: string;
   customers: Customer[] = [];
 
   ngOnInit(): void {
@@ -21,6 +25,35 @@ export class CustomerListComponent implements OnInit {
   }
 
   getAll() {
-    this.customers = this.customerService.getAll();
+    this.customerService.getAll().subscribe((customer) => {
+      this.customers = customer;
+    });
+  }
+
+  getInfoCustomerDelete(id: string, name: string) {
+    this.idDelete = id;
+    this.nameDelete = name;
+  }
+
+  deleteCustomer() {
+    this.customerService.deleteCustomer(this.idDelete).subscribe(() => {
+      Swal.fire({
+        icon: 'success',
+        title: 'Xóa thành công!',
+        text: 'Khách hàng: ' + this.nameDelete,
+        showClass: {
+          popup: 'animate__animated animate__fadeInDown'
+        },
+        hideClass: {
+          popup: 'animate__animated animate__fadeOutUp'
+        }
+      });
+      this.checkModal = true;
+      this.ngOnInit();
+    }, error => {
+      console.log(error);
+    }, () => {
+      console.log('Xóa khách hàng thành công!');
+    });
   }
 }

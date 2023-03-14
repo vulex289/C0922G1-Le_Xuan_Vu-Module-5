@@ -1,0 +1,89 @@
+
+<div class="row container-fluid" style="background-image: url('https://image.winudf.com/v2/image/Y29tLlJlc29ydHdhbGxwYXBlcnMucGljdHVyZXMuYmFja2dyb3VuZHMucGhvdG9zLmltYWdlcy5oZC5mcmVlLmJlYXV0aWZ1bF9zY3JlZW5fMl8xNTMzODgyMTk0XzA4OQ/screen-2.jpg?fakeurl=1&type=.webp')">
+  <h2 class="text-center">FACILITY INFORMATION</h2>
+  <a routerLink="/facility/list">
+    <button class="btn btn-primary">Back to FacilityList</button>
+  </a>
+  <div class="d-flex justify-content-center">
+    <form class="w-50 border border-2 border-success p-3 rounded" [formGroup]="facilityFormCreate" (ngSubmit)="saveFacility()">
+      <div class="mb-3">
+        <input type="text" hidden  class="form-control" formControlName="id" >
+          </div>
+      <div class="mb-3">
+        <label for="recipient-name" class="col-form-label">Tên Dịch Vụ:</label>
+        <input type="text" class="form-control" formControlName="facilityName"  id="recipient-name">
+        <p class="text-danger" *ngIf="facilityFormCreate.controls.facilityName.touched && facilityFormCreate.controls.facilityName?.errors?.required">Bạn không được bỏ trống</p>
+        <p class="text-danger" *ngIf="facilityFormCreate.controls.facilityName.dirty && facilityFormCreate.controls.facilityName?.errors?.pattern">Tên Không được chứa số</p>
+      </div>
+      <div class="mb-3">
+        <label for="recipient-name" class="col-form-label">Area</label>
+        <input type="text"  class="form-control" formControlName="area">
+        <p class="text-danger" *ngIf="facilityFormCreate.controls.area.dirty && facilityFormCreate.controls.area?.errors?.min">Diện tích phải lớn hơn 0</p>
+        <p class="text-danger" *ngIf="facilityFormCreate.controls.area.touched && facilityFormCreate.controls.area?.errors?.required">Bạn không được để trống</p>
+      </div>
+      <div class="mb-3">
+        <label for="recipient-name" class="col-form-label">Cost</label>
+        <input type="number"  class="form-control" formControlName="cost">
+        <p class="text-danger" *ngIf="facilityFormCreate.controls.cost.dirty && facilityFormCreate.controls.cost?.errors?.min">Số phải lớn hơn 0</p>
+        <p class="text-danger" *ngIf="facilityFormCreate.controls.cost.touched && facilityFormCreate.controls.cost?.errors?.required">Bạn không được để trống</p>
+      </div>
+      <div class="mb-3">
+        <label for="recipient-name" class="col-form-label">Max People</label>
+        <input type="number"  class="form-control" formControlName="maxPeople">
+        <p class="text-danger" *ngIf="facilityFormCreate.controls.maxPeople.dirty && facilityFormCreate.controls.maxPeople?.errors?.min">Số phải lớn hơn 0</p>
+        <p class="text-danger" *ngIf="facilityFormCreate.controls.maxPeople.touched && facilityFormCreate.controls.maxPeople?.errors?.required">Bạn không được để trống</p>
+      </div>
+      <div class="mb-3">
+        <label class="form-label">Kiểu thuê</label>
+        <select class="form-select" aria-label="Default select example" formControlName="rentType">
+          <option *ngFor="let rt of rentTypes" [ngValue]="rt">{{rt.rentTypeName}}</option>
+        </select>
+      </div>
+      <div class="mb-3">
+        <label class="form-label">Loại dịch vụ</label>
+        <select class="form-select" aria-label="Default select example" formControlName="facilityType">
+          <option *ngFor="let ft of facilityTypes" [ngValue]="ft">{{ft.facilityTypeName}}</option>
+        </select>
+      </div>
+      <div class="mb-3">
+        <label for="recipient-name" class="col-form-label">StandardRoom</label>
+        <input type="text"  class="form-control" formControlName="standardRoom">
+       <p class="text-danger" *ngIf="facilityFormCreate.controls.standardRoom.touched && facilityFormCreate.controls.standardRoom?.errors?.required">Bạn không được để trống</p>
+      </div>
+      <div class="mb-3">
+        <label for="recipient-name" class="col-form-label">Description</label>
+        <input type="text"  class="form-control" formControlName="descriptionOtherConvenience">
+       <p class="text-danger" *ngIf="facilityFormCreate.controls.descriptionOtherConvenience.touched && facilityFormCreate.controls.descriptionOtherConvenience?.errors?.required">Bạn không được để trống</p>
+      </div>
+      <div class="mb-3">
+        <label for="recipient-name" class="col-form-label">Pool Area</label>
+        <input type="number"  class="form-control" formControlName="poolArea">
+        <p class="text-danger" *ngIf="facilityFormCreate.controls.poolArea.dirty && facilityFormCreate.controls.poolArea?.errors?.min">Số phải lớn hơn 0</p>
+        <p class="text-danger" *ngIf="facilityFormCreate.controls.poolArea.touched && facilityFormCreate.controls.poolArea?.errors?.required">Bạn không được để trống</p>
+      </div>
+      <div class="mb-3">
+        <label for="recipient-name" class="col-form-label">Number Of Floor</label>
+        <input type="number"  class="form-control" formControlName="numberOfFloors">
+        <p class="text-danger" *ngIf="facilityFormCreate.controls.numberOfFloors.dirty && facilityFormCreate.controls.numberOfFloors?.errors?.min">Số phải lớn hơn 0</p>
+        <p class="text-danger" *ngIf="facilityFormCreate.controls.numberOfFloors.touched && facilityFormCreate.controls.numberOfFloors?.errors?.required">Bạn không được để trống</p>
+      </div>
+      <div class="mb-3">
+        <label for="recipient-name" class="col-form-label">FacilityFree</label>
+        <input type="text"  class="form-control" formControlName="facilityFree">
+        <p class="text-danger" *ngIf="facilityFormCreate.controls.facilityFree.touched && facilityFormCreate.controls.facilityFree?.errors?.required">Bạn không được để trống</p>
+      </div>
+      <div class="mb-3">
+        <label for="recipient-name" class="col-form-label">URL IMAGE</label>
+        <input type="text"  class="form-control" formControlName="url">
+        <p class="text-danger" *ngIf="facilityFormCreate.controls.url.touched && facilityFormCreate.controls.url?.errors?.required">Bạn không được để trống</p>
+      </div>
+      <div class="mb-3 text-center">
+        <input type="submit" id="btnSave" [disabled]="facilityFormCreate.invalid"
+               class=" form-control btn btn-info btn-outline-success btn-sm border border-2 border-success text-dark "
+               value="SAVE">
+      </div>
+    </form>
+  </div>
+</div>
+
+

@@ -1,0 +1,357 @@
+{
+  "customers": [
+    {
+      "id": 1,
+      "customerType": {
+        "id": "1",
+        "name": "Diamond"
+      },
+      "name": "Dương Văn Hào",
+      "dateOfBirth": "2000-09-28",
+      "gender": true,
+      "idCard": "201943464",
+      "phoneNumber": "0905703782",
+      "email": "lexuanvu289@gmail.com",
+      "address": "K02/12 Đinh Tiên Hoàng, Thanh Khê, Đà Nẵng"
+    },
+    {
+      "id": 2,
+      "customerType": {
+        "id": "2",
+        "name": "Vip"
+      },
+      "name": "Nguyễn Văn Dương",
+      "dateOfBirth": "1994-09-19",
+      "gender": true,
+      "idCard": "201286494",
+      "phoneNumber": "0789123456",
+      "email": "nguyent289@gmail.com",
+      "address": "K14/15 Nguyễn Thị Thập, Thanh Khê, Đà Nẵng"
+    },
+    {
+      "id": 3,
+      "customerType": {
+        "id": 4,
+        "name": "Silver"
+      },
+      "name": "Nguyễn Thị Hà",
+      "dateOfBirth": "1998-12-02",
+      "gender": false,
+      "idCard": "2017564293",
+      "phoneNumber": "0789555872",
+      "email": "nguyent289@gmail.com",
+      "address": "K14/15 Nguyễn Thị Thập, Thanh Khê, Đà Nẵng"
+    },
+    {
+      "id": 4,
+      "name": "Hà Văn Tính",
+      "dateOfBirth": "1999-12-28",
+      "gender": true,
+      "idCard": "201946547",
+      "phoneNumber": "0907456123",
+      "email": "avg@gmail.com",
+      "address": "Đà Nẵng",
+      "customerType": {
+        "id": 1,
+        "name": "Diamond"
+      }
+    },
+    {
+      "id": "KH-1234",
+      "name": "Nguyễn Thị Chung",
+      "dateOfBirth": "2002-01-28",
+      "gender": false,
+      "idCard": "200048512",
+      "phoneNumber": "0904586754",
+      "email": "gnuyen@gmail.com",
+      "address": "Hà Nội",
+      "customerType": {
+        "id": 2,
+        "name": "Vip"
+      }
+    }
+  ],
+  "customerTypes": [
+    {
+      "id": 1,
+      "name": "Diamond"
+    },
+    {
+      "id": 2,
+      "name": "Vip"
+    },
+    {
+      "id": 3,
+      "name": "Normal"
+    },
+    {
+      "id": 4,
+      "name": "Silver"
+    }
+  ],
+  "rentTypes": [
+    {
+      "id": 1,
+      "rentTypeName": "year"
+    },
+    {
+      "id": 2,
+      "rentTypeName": "month"
+    },
+    {
+      "id": 3,
+      "rentTypeName": "day"
+    },
+    {
+      "id": 4,
+      "rentTypeName": "hour"
+    }
+  ],
+  "facilityTypes": [
+    {
+      "id": 1,
+      "facilityTypeName": "villa"
+    },
+    {
+      "id": 2,
+      "facilityTypeName": "house"
+    },
+    {
+      "id": 3,
+      "facilityTypeName": "room"
+    }
+  ],
+  "facilities": [
+    {
+      "id": 1,
+      "facilityName": "Studio Queen Script",
+      "area": 100,
+      "cost": 500000,
+      "maxPeople": 2,
+      "standardRoom": "",
+      "descriptionOtherConvenience": "",
+      "poolArea": 0,
+      "numberOfFloors": 0,
+      "facilityFree": "Massage người mù",
+      "rentType": {
+        "id": 4,
+        "rentTypeName": "hour"
+      },
+      "facilityType": {
+        "id": 3,
+        "facilityTypeName": "Room"
+      },
+      "url": "https://www.furama.com/images/FRF_studioroom_ibe4.jpg"
+    },
+    {
+      "facilityName": "Superior Angular",
+      "area": 150,
+      "cost": 400000,
+      "maxPeople": 2,
+      "standardRoom": "",
+      "descriptionOtherConvenience": "",
+      "poolArea": 0,
+      "numberOfFloors": 0,
+      "facilityFree": "Massage người mù",
+      "rentType": {
+        "id": 4,
+        "rentTypeName": "Giờ"
+      },
+      "facilityType": {
+        "id": 3,
+        "facilityTypeName": "Room"
+      },
+      "url": "https://www.furama.com/images/ibe_Superior.jpg",
+      "id": 2
+    },
+    {
+      "id": 3,
+      "facilityName": "Deluxe Ajax",
+      "area": 200,
+      "cost": 1000000,
+      "maxPeople": 3,
+      "standardRoom": "",
+      "descriptionOtherConvenience": "",
+      "poolArea": 0,
+      "numberOfFloors": 0,
+      "facilityFree": "Massage người mù",
+      "rentType": {
+        "id": 4,
+        "rentTypeName": "day"
+      },
+      "facilityType": {
+        "id": 3,
+        "facilityTypeName": "Room"
+      },
+      "url": "https://www.furama.com/images/ibe-Deluxe-Room.jpg"
+    },
+    {
+      "id": 4,
+      "facilityName": "Villa Beach Back Jquery",
+      "area": 1200,
+      "cost": 7500000,
+      "maxPeople": 7,
+      "standardRoom": "Vip",
+      "descriptionOtherConvenience": "Có hồ bơi",
+      "poolArea": 40,
+      "numberOfFloors": 4,
+      "facilityFree": "",
+      "rentType": {
+        "id": 3,
+        "rentTypeName": "Ngày"
+      },
+      "facilityType": {
+        "id": 1,
+        "facilityTypeName": "Villa"
+      },
+      "url": "https://media-cdn.tripadvisor.com/media/vr-splice-j/02/8e/d7/b8.jpg"
+    },
+    {
+      "id": 5,
+      "facilityName": "Villa Beach Front Thymeleaf",
+      "area": 2000,
+      "cost": 10500000,
+      "maxPeople": 8,
+      "standardRoom": "Vip",
+      "descriptionOtherConvenience": "Có hồ bơi",
+      "poolArea": 100,
+      "numberOfFloors": 4,
+      "facilityFree": "",
+      "rentType": {
+        "id": 3,
+        "rentTypeName": "day"
+      },
+      "facilityType": {
+        "id": 1,
+        "facilityTypeName": "Villa"
+      },
+      "url": "https://pix10.agoda.net/hotelImages/2601996/0/7b0a95ae1cbf0f0650ff89ff15cbfbfb.jpg?ca=7&ce=1&s=1024x768"
+    },
+    {
+      "id": 6,
+      "name": "Spring Framework House 01",
+      "area": 500,
+      "cost": 7000000,
+      "maxPeople": 5,
+      "standardRoom": "Vip",
+      "descriptionOtherConvenience": "Có ghế tình yêu",
+      "poolArea": 0,
+      "numberOfFloors": 3,
+      "facilityFree": "",
+      "rentType": {
+        "id": 2,
+        "rentTypeName": "month"
+      },
+      "facilityType": {
+        "id": 2,
+        "facilityTypeName": "House"
+      },
+      "url": "https://i.pinimg.com/736x/a7/b3/c6/a7b3c60afae4a89a3fb12fc8d054156d.jpg"
+    },
+    {
+      "id": 7,
+      "facilityName": "Family Room Static",
+      "area": 300,
+      "cost": 1500000,
+      "maxPeople": 4,
+      "standardRoom": "",
+      "descriptionOtherConvenience": "",
+      "poolArea": 0,
+      "numberOfFloors": 0,
+      "facilityFree": "Đánh bài quỳ vỏ mít",
+      "rentType": {
+        "id": 3,
+        "rentTypeName": "day"
+      },
+      "facilityType": {
+        "id": 3,
+        "facilityTypeName": "Room"
+      },
+      "url": "https://www.furama.com/images/ibe_Family.jpg"
+    },
+    {
+      "id": 8,
+      "facilityName": "Premier Family Room",
+      "area": 300,
+      "cost": 1250000,
+      "maxPeople": 4,
+      "standardRoom": "",
+      "descriptionOtherConvenience": "",
+      "poolArea": 0,
+      "numberOfFloors": 0,
+      "facilityFree": "Dắt chó đi dạo",
+      "rentType": {
+        "id": 3,
+        "rentTypeName": "day"
+      },
+      "facilityType": {
+        "id": 3,
+        "facilityTypeName": "Room"
+      },
+      "url": "https://www.furama.com/images/FRF_studioroom_ibe9.jpg"
+    },
+    {
+      "id": 9,
+      "facilityName": "Executive Suite",
+      "area": 150,
+      "cost": 350000,
+      "maxPeople": 2,
+      "standardRoom": "",
+      "descriptionOtherConvenience": "",
+      "poolArea": 0,
+      "numberOfFloors": 0,
+      "facilityFree": "Massage người mù",
+      "rentType": {
+        "id": 4,
+        "rentTypeName": "hour"
+      },
+      "facilityType": {
+        "id": 3,
+        "facilityTypeName": "Room"
+      },
+      "url": "https://www.furama.com/images/ibe_frf_Executive-Suite.jpg"
+    },
+    {
+      "facilityName": "Theme Suite Directive",
+      "area": 400,
+      "cost": 50000000,
+      "maxPeople": 3,
+      "standardRoom": "vip",
+      "descriptionOtherConvenience": "Có ghế tình yêu",
+      "poolArea": "",
+      "numberOfFloors": 1,
+      "facilityFree": "",
+      "rentType": {
+        "id": 1,
+        "rentTypeName": "year"
+      },
+      "facilityType": {
+        "id": 2,
+        "facilityTypeName": "House"
+      },
+      "url": "https://www.furama.com/images/ibe_Safari_Suite.jpg",
+      "id": 10
+    },
+    {
+      "id": 11,
+      "facilityName": "aaaaaaaaaaa",
+      "area": "23",
+      "cost": 232333,
+      "maxPeople": 2,
+      "rentType": {
+        "id": 2,
+        "rentTypeName": "month"
+      },
+      "facilityType": {
+        "id": 2,
+        "facilityTypeName": "house"
+      },
+      "standardRoom": "aaaaaa",
+      "descriptionOtherConvenience": "aaaaaaaaa",
+      "poolArea": 23,
+      "numberOfFloors": 2,
+      "facilityFree": "aaaaaaa",
+      "url": "aaaaaaaaaaaaaaaaaaaaaa"
+    }
+  ]
+}

@@ -18,6 +18,8 @@ export class FacilityListComponent implements OnInit {
   }
 
   getAll() {
-  return this.facilities = this.facilityService.getAll()
+    return this.facilityService.getAll().subscribe(facility => {
+      this.facilities = facility;
+    });
   }
 }
