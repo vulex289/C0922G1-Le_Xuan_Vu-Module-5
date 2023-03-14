@@ -5,7 +5,7 @@
   </li>
 </ul>
 <p class="text-primary">{{message}}</p>
-<form [formGroup]="productEdit" (ngSubmit)="onEdit()"  >
+<form *ngIf="productEdit" [formGroup]="productEdit" (ngSubmit)="onEdit()"  >
   <h3 class="text-center">PRODUCT INFORMATION</h3>
   <div class="form-group">
     <label for="id">Id</label>
