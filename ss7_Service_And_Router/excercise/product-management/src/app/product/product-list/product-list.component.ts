@@ -17,7 +17,9 @@ export class ProductListComponent implements OnInit {
     this.getAll();
   }
 
-  getAll= (): void => {
-    this.products = this.productService.getAll();
+  getAll = (): void => {
+    this.productService.getAll().subscribe(product => {
+      this.products = product;
+    })
   }
 }

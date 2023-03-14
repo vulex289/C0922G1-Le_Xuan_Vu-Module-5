@@ -34,6 +34,11 @@
            class="form-control" name="" id="description" aria-describedby="helpId" placeholder="">
   </div>
   <p class="text-danger" *ngIf="productEdit.controls.description.touched && productEdit.controls.description?.errors?.required" >Bạn không được để trống</p>
-
+  <div class="form-group">
+    <label for="Category">Category</label>
+    <select [compareWith]="compareWithId"    class="form-control" name="" id="Category" formControlName="category">
+      <option   *ngFor="let item of categories" [ngValue]="item"   >{{item.nameCategory}}</option>
+    </select>
+  </div>
   <button [disabled]="!productEdit.valid" type="submit" class="btn btn-primary">EDIT</button>
 </form>

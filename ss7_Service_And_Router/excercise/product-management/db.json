@@ -1,0 +1,68 @@
+{
+  "products": [
+    {
+      "id": 1,
+      "name": "Ghế đẩu",
+      "price": 45000,
+      "description": "Ghế màu đỏ,4 sọc ",
+      "category": {
+        "id": 2,
+        "nameCategory": "Nhựa Song Long"
+      }
+    },
+    {
+      "id": 2,
+      "name": "Ghế bành",
+      "price": 55000,
+      "description": "Ghế màu xanh,5 sọc lưới",
+      "category": {
+        "id": 2,
+        "nameCategory": "Nhựa duy tân"
+      }
+    },
+    {
+      "id": 10,
+      "name": "Room 304",
+      "price": "2500",
+      "description": "new",
+      "category": {
+        "id": 3,
+        "nameCategory": "Nhựa Đại Đồng Tiến"
+      }
+    },
+    {
+      "id": 12,
+      "name": "samsung s12",
+      "price": "30000",
+      "description": "old",
+      "category": {
+        "id": 3,
+        "nameCategory": "Nhựa Đại Đồng Tiến"
+      }
+    },
+    {
+      "id": 13,
+      "name": "h",
+      "price": "30000",
+      "description": "new 111111111111111111111",
+      "category": {
+        "id": 4,
+        "nameCategory": "Nhựa Vinh Hưng"
+      }
+    }
+  ],
+  "categories": [
+    {
+      "id": 2,
+      "nameCategory": "Nhựa Song Long"
+    },
+    {
+      "id": 3,
+      "nameCategory": "Nhựa Đại Đồng Tiến"
+    },
+    {
+      "id": 4,
+      "nameCategory": "Nhựa Vinh Hưng"
+    }
+  ]
+}

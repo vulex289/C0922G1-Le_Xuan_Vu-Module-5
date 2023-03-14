@@ -2,6 +2,8 @@ import {Component, OnInit} from '@angular/core';
 import {ProductService} from "../../service/product.service";
 import {ActivatedRoute} from "@angular/router";
 import {FormControl, FormGroup, Validators} from "@angular/forms";
+import {Category} from "../../model/category";
+import {CategoryService} from "../../service/category.service";
 
 @Component({
   selector: 'app-product-create',
@@ -10,30 +12,39 @@ import {FormControl, FormGroup, Validators} from "@angular/forms";
 })
 export class ProductCreateComponent implements OnInit {
   message: string = '';
-  check: boolean;
+  categories: Category[] = [];
   productCreate: FormGroup;
 
   constructor(private productService: ProductService,
-              private activatedRoute: ActivatedRoute
+              private activatedRoute: ActivatedRoute,
+              private categoryService: CategoryService
   ) {
   }
 
   ngOnInit(): void {
+    this.getCategories();
     this.productCreate = new FormGroup({
-      id: new FormControl("", Validators.required),
+      id: new FormControl(),
       name: new FormControl("", Validators.required),
       price: new FormControl("", [Validators.required, Validators.pattern('^\\d+$')]),
-      description: new FormControl("", Validators.required)
+      description: new FormControl("", Validators.required),
+      category: new FormControl(this.categories)
+    })
+  }
+
+  getCategories() {
+    this.categoryService.getAll().subscribe(category => {
+      this.categories = category;
     })
   }
 
   onCreate() {
-   this.check = this.productService.addNewProduct(this.productCreate.value);
-   if (this.check){
-   this.productCreate.reset();
-   this.message = "Tạo mới thành công";
-  }else {
-     this.message = "Tạo mới chưa thành công";
-   }
+    this.productService.addNewProduct(this.productCreate.value).subscribe(() => {
+      this.productCreate.reset();
+      this.message = "Tạo mới thành công";
+    });
+
+    this.productCreate.reset();
+    this.message = "Tạo mới thành công";
   }
 }

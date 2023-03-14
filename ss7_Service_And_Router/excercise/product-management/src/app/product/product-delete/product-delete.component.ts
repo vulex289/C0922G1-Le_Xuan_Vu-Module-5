@@ -11,10 +11,9 @@ import {ActivatedRoute, ParamMap, Router} from "@angular/router";
 })
 export class ProductDeleteComponent implements OnInit {
   message: string = '';
-  check: boolean;
   product: IProduct = null;
   productDelete: FormGroup;
-   id: number;
+  id: number;
 
   constructor(private productService: ProductService,
               private activatedRoute: ActivatedRoute,
@@ -25,21 +24,29 @@ export class ProductDeleteComponent implements OnInit {
   ngOnInit(): void {
     this.activatedRoute.paramMap.subscribe((paramMap: ParamMap) => {
       this.id = +paramMap.get('id');
-      this.product = this.productService.getProductDetail(this.id);
-      this.productDelete = new FormGroup({
-        id: new FormControl(this.product.id),
-        name: new FormControl(this.product.name),
-        price: new FormControl(this.product.price),
-        description: new FormControl(this.product.description)
-      })
+      this.getProduct(this.id);
     })
+  }
 
+  getProduct(id: number) {
+    this.productService.getProductDetail(this.id).subscribe((item => {
+      this.productDelete = new FormGroup({
+        id: new FormControl(item.id),
+        name: new FormControl(item.name),
+        price: new FormControl(item.price),
+        description: new FormControl(item.description),
+        category: new FormControl(item.category.nameCategory),
+      })
+    }))
   }
 
   onDelete() {
-    this.productService.deleteProduct(this.id);
+    this.productService.deleteProduct(this.id).subscribe(()=>{
+      console.log(this.id)
+      this.router.navigateByUrl('');
+    });
     // this.router.navigateByUrl('./delete/2');
-    this.router.navigate(['delete','2']);
+    // this.router.navigate(['delete','2']);
   }
 
   onBackPage() {
