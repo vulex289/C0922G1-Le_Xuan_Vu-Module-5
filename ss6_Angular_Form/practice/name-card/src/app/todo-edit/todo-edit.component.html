@@ -1,0 +1,28 @@
+<form *ngIf="todoEdit" [formGroup]="todoEdit" (ngSubmit)="onEdit()">
+  <h3 class="text-center">CATEGORY INFORMATION</h3>
+  <div class="form-group">
+    <label for="id">Id</label>
+    <input type="text" formControlName="id"
+           class="form-control" hidden name="" id="id" aria-describedby="helpId" placeholder="">
+  </div>
+  <div class="form-group">
+    <label for="content">Content</label>
+    <input type="text" formControlName="content"
+           class="form-control" name="" id="content" aria-describedby="helpId" placeholder="">
+  </div>
+  <div class="form-group">
+    <div class="form-check">
+      <label class="form-check-label">
+        <input type="radio" class="form-check-input" formControlName="complete" [value]="true" >
+        True
+      </label>
+    </div>
+    <div class="form-check">
+      <label class="form-check-label">
+        <input type="radio" class="form-check-input" formControlName="complete" [value]="false">
+        False
+      </label>
+    </div>
+  </div>
+  <button type="submit" class="btn btn-primary">EDIT</button>
+</form>
