@@ -39,35 +39,35 @@
           <option *ngFor="let rt of rentTypes" [ngValue]="rt">{{rt.rentTypeName}}</option>
         </select>
       </div>
-      <div class="mb-3">
+      <div class="mb-3" hidden>
         <label class="form-label">Loại dịch vụ</label>
         <select class="form-select" aria-label="Default select example" formControlName="facilityType">
-          <option *ngFor="let ft of facilityTypes" [ngValue]="ft">{{ft.facilityTypeName}}</option>
+          <option  *ngFor="let ft of facilityTypes" [ngValue]="ft">{{ft.facilityTypeName}}</option>
         </select>
       </div>
-      <div class="mb-3">
+      <div class="mb-3"  *ngIf="facilityFormEdit.get('facilityType').value !== facilityTypes[2]">
         <label for="recipient-name" class="col-form-label">StandardRoom</label>
-        <input type="text"  class="form-control" formControlName="standardRoom">
+        <input  type="text"  class="form-control" formControlName="standardRoom">
         <p class="text-danger" *ngIf="facilityFormEdit.controls.standardRoom.touched && facilityFormEdit.controls.standardRoom?.errors?.required">Bạn không được để trống</p>
       </div>
-      <div class="mb-3">
-        <label for="recipient-name" class="col-form-label">Description</label>
+      <div class="mb-3"  *ngIf="facilityFormEdit.get('facilityType').value !== facilityTypes[2] || facilityFormEdit.get('facilityType').value !== facilityTypes[1]">
+        <label for="recipient-name"  class="col-form-label">Description</label>
         <input type="text"  class="form-control" formControlName="descriptionOtherConvenience">
         <p class="text-danger" *ngIf="facilityFormEdit.controls.descriptionOtherConvenience.touched && facilityFormEdit.controls.descriptionOtherConvenience?.errors?.required">Bạn không được để trống</p>
       </div>
-      <div class="mb-3">
-        <label for="recipient-name" class="col-form-label">Pool Area</label>
+      <div class="mb-3" *ngIf="facilityFormEdit.get('facilityType').value !== facilityTypes[2] || facilityFormEdit.get('facilityType').value !== facilityTypes[1]">
+        <label for="recipient-name" class="col-form-label"  >Pool Area</label>
         <input type="number"  class="form-control" formControlName="poolArea">
         <p class="text-danger" *ngIf="facilityFormEdit.controls.poolArea.dirty && facilityFormEdit.controls.poolArea?.errors?.min">Số phải lớn hơn 0</p>
         <p class="text-danger" *ngIf="facilityFormEdit.controls.poolArea.touched && facilityFormEdit.controls.poolArea?.errors?.required">Bạn không được để trống</p>
       </div>
-      <div class="mb-3">
+      <div class="mb-3"  *ngIf="facilityFormEdit.get('facilityType').value !== facilityTypes[2]">
         <label for="recipient-name" class="col-form-label">Number Of Floor</label>
         <input type="number"  class="form-control" formControlName="numberOfFloors">
         <p class="text-danger" *ngIf="facilityFormEdit.controls.numberOfFloors.dirty && facilityFormEdit.controls.numberOfFloors?.errors?.min">Số phải lớn hơn 0</p>
         <p class="text-danger" *ngIf="facilityFormEdit.controls.numberOfFloors.touched && facilityFormEdit.controls.numberOfFloors?.errors?.required">Bạn không được để trống</p>
       </div>
-      <div class="mb-3">
+      <div class="mb-3" *ngIf="facilityFormEdit.get('facilityType').value !== facilityTypes[0]">
         <label for="recipient-name" class="col-form-label">FacilityFree</label>
         <input type="text"  class="form-control" formControlName="facilityFree">
         <p class="text-danger" *ngIf="facilityFormEdit.controls.facilityFree.touched && facilityFormEdit.controls.facilityFree?.errors?.required">Bạn không được để trống</p>

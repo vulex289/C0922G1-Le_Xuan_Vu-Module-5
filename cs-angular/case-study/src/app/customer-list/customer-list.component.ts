@@ -15,7 +15,7 @@ export class CustomerListComponent implements OnInit {
   constructor(private customerService: CustomerService) {
   }
 
-  checkModal: boolean ;
+
   idDelete: string;
   nameDelete: string;
   customers: Customer[] = [];
@@ -48,7 +48,6 @@ export class CustomerListComponent implements OnInit {
           popup: 'animate__animated animate__fadeOutUp'
         }
       });
-      this.checkModal = true;
       this.ngOnInit();
     }, error => {
       console.log(error);

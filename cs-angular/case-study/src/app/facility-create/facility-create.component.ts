@@ -16,6 +16,7 @@ export class FacilityCreateComponent implements OnInit {
   rentTypes: RentType[] = [];
   facilityTypes: FacilityType[] = [];
   facilityFormCreate: FormGroup;
+   checkFacilityType = true;
 
   constructor(private facilityService: FacilityService,
               private rentTypeService: RentTypeService,
@@ -59,5 +60,35 @@ export class FacilityCreateComponent implements OnInit {
     this.facilityService.save(this.facilityFormCreate.value).subscribe(() => {
       this.route.navigateByUrl('/facility/list');
     });
+  }
+
+  addVilla() {
+    this.checkFacilityType = false;
+    this.facilityFormCreate.get('facilityType').setValue(this.facilityTypes[0]);
+    this.facilityFormCreate.get('standardRoom').enable();
+    this.facilityFormCreate.get('descriptionOtherConvenience').enable();
+    this.facilityFormCreate.get('poolArea').enable();
+    this.facilityFormCreate.get('numberOfFloors').enable();
+    this.facilityFormCreate.get('facilityFree').disable();
+  }
+
+  addRoom() {
+    this.checkFacilityType = false;
+    this.facilityFormCreate.get('facilityType').setValue(this.facilityTypes[2]);
+    this.facilityFormCreate.get('standardRoom').disable();
+    this.facilityFormCreate.get('descriptionOtherConvenience').disable();
+    this.facilityFormCreate.get('poolArea').disable();
+    this.facilityFormCreate.get('numberOfFloors').disable();
+    this.facilityFormCreate.get('facilityFree').enable();
+  }
+
+  addHouse() {
+    this.checkFacilityType = false;
+    this.facilityFormCreate.get('facilityType').setValue(this.facilityTypes[1]);
+    this.facilityFormCreate.get('standardRoom').enable();
+    this.facilityFormCreate.get('descriptionOtherConvenience').disable();
+    this.facilityFormCreate.get('poolArea').disable();
+    this.facilityFormCreate.get('numberOfFloors').enable();
+    this.facilityFormCreate.get('facilityFree').enable();
   }
 }

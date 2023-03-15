@@ -41,34 +41,6 @@
       "phoneNumber": "0789555872",
       "email": "nguyent289@gmail.com",
       "address": "K14/15 Nguyễn Thị Thập, Thanh Khê, Đà Nẵng"
-    },
-    {
-      "id": 4,
-      "name": "Hà Văn Tính",
-      "dateOfBirth": "1999-12-28",
-      "gender": true,
-      "idCard": "201946547",
-      "phoneNumber": "0907456123",
-      "email": "avg@gmail.com",
-      "address": "Đà Nẵng",
-      "customerType": {
-        "id": 1,
-        "name": "Diamond"
-      }
-    },
-    {
-      "id": "KH-1234",
-      "name": "Nguyễn Thị Chung",
-      "dateOfBirth": "2002-01-28",
-      "gender": false,
-      "idCard": "200048512",
-      "phoneNumber": "0904586754",
-      "email": "gnuyen@gmail.com",
-      "address": "Hà Nội",
-      "customerType": {
-        "id": 2,
-        "name": "Vip"
-      }
     }
   ],
   "customerTypes": [
@@ -352,6 +324,158 @@
       "numberOfFloors": 2,
       "facilityFree": "aaaaaaa",
       "url": "aaaaaaaaaaaaaaaaaaaaaa"
+    },
+    {
+      "id": 12,
+      "facilityName": "",
+      "area": "",
+      "cost": "",
+      "maxPeople": "",
+      "rentType": [],
+      "facilityType": [],
+      "standardRoom": "",
+      "descriptionOtherConvenience": "",
+      "poolArea": "",
+      "numberOfFloors": "",
+      "facilityFree": "",
+      "url": ""
+    },
+    {
+      "id": 13,
+      "facilityName": "",
+      "area": "",
+      "cost": "",
+      "maxPeople": "",
+      "rentType": [],
+      "facilityType": [],
+      "standardRoom": "",
+      "descriptionOtherConvenience": "",
+      "poolArea": "",
+      "numberOfFloors": "",
+      "facilityFree": "",
+      "url": ""
+    },
+    {
+      "id": 14,
+      "facilityName": "",
+      "area": "",
+      "cost": "",
+      "maxPeople": "",
+      "rentType": [],
+      "facilityType": [],
+      "standardRoom": "",
+      "descriptionOtherConvenience": "",
+      "poolArea": "",
+      "numberOfFloors": "",
+      "facilityFree": "",
+      "url": ""
+    },
+    {
+      "id": 15,
+      "facilityName": "",
+      "area": "",
+      "cost": "",
+      "maxPeople": "",
+      "rentType": [],
+      "facilityType": [],
+      "standardRoom": "",
+      "descriptionOtherConvenience": "",
+      "poolArea": "",
+      "numberOfFloors": "",
+      "facilityFree": "",
+      "url": ""
+    },
+    {
+      "id": 16,
+      "facilityName": "",
+      "area": "",
+      "cost": "",
+      "maxPeople": "",
+      "rentType": [],
+      "facilityType": [],
+      "standardRoom": "",
+      "descriptionOtherConvenience": "",
+      "poolArea": "",
+      "numberOfFloors": "",
+      "facilityFree": "",
+      "url": ""
+    },
+    {
+      "id": 17,
+      "facilityName": "",
+      "area": "",
+      "cost": "",
+      "maxPeople": "",
+      "rentType": [],
+      "facilityType": [],
+      "standardRoom": "",
+      "descriptionOtherConvenience": "",
+      "poolArea": "",
+      "numberOfFloors": "",
+      "facilityFree": "",
+      "url": ""
+    },
+    {
+      "id": 18,
+      "facilityName": "",
+      "area": "",
+      "cost": "",
+      "maxPeople": "",
+      "rentType": [],
+      "facilityType": [],
+      "standardRoom": "",
+      "descriptionOtherConvenience": "",
+      "poolArea": "",
+      "numberOfFloors": "",
+      "facilityFree": "",
+      "url": ""
+    },
+    {
+      "id": 19,
+      "facilityName": "",
+      "area": "",
+      "cost": "",
+      "maxPeople": "",
+      "rentType": [],
+      "facilityType": [],
+      "standardRoom": "",
+      "descriptionOtherConvenience": "",
+      "poolArea": "",
+      "numberOfFloors": "",
+      "facilityFree": "",
+      "url": ""
+    },
+    {
+      "id": 20,
+      "facilityName": "",
+      "area": "",
+      "cost": "",
+      "maxPeople": "",
+      "rentType": [],
+      "facilityType": [],
+      "standardRoom": "",
+      "descriptionOtherConvenience": "",
+      "poolArea": "",
+      "numberOfFloors": "",
+      "facilityFree": "",
+      "url": ""
+    },
+    {
+      "id": 21,
+      "facilityName": "aaaaaaaaaaaaaaaaaaa",
+      "area": "222222",
+      "cost": 222222,
+      "maxPeople": 2222,
+      "rentType": {
+        "id": 3,
+        "rentTypeName": "day"
+      },
+      "facilityType": {
+        "id": 3,
+        "facilityTypeName": "room"
+      },
+      "facilityFree": "2222222222",
+      "url": "2222222222"
     }
   ]
 }
