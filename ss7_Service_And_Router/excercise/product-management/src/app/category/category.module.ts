@@ -1,25 +1,25 @@
-// import { NgModule } from '@angular/core';
-// import { CommonModule } from '@angular/common';
-// import {CategoryListComponent} from "./category-list/category-list.component";
-// import {BrowserModule} from "@angular/platform-browser";
-// import {HttpClientModule} from "@angular/common/http";
-// import {CategoryRoutingModule} from "./category-list/category-routing.module";
-// import {FormsModule, ReactiveFormsModule} from '@angular/forms';
-//
-//
-//
-// @NgModule({
-//   declarations: [
-//     CategoryListComponent,
-//   ],
-//   imports: [
-//     BrowserModule,
-//     CategoryRoutingModule,
-//     ReactiveFormsModule,
-//     HttpClientModule,
-//     CommonModule
-//   ],
-//
-// })
-//
-// export class CategoryModule { }
+import { NgModule } from '@angular/core';
+import { CommonModule } from '@angular/common';
+
+import { CategoryRoutingModule } from './category-routing.module';
+import {CategoryCreateComponent} from "./category-create/category-create.component";
+import {CategoryDeleteComponent} from "./category-delete/category-delete.component";
+import {CategoryEditComponent} from "./category-edit/category-edit.component";
+import {CategoryListComponent} from "./category-list/category-list.component";
+import {ReactiveFormsModule} from "@angular/forms";
+
+
+@NgModule({
+  declarations: [
+    CategoryCreateComponent,
+    CategoryDeleteComponent,
+    CategoryEditComponent,
+    CategoryListComponent
+  ],
+  imports: [
+    CommonModule,
+    CategoryRoutingModule,
+    ReactiveFormsModule
+  ]
+})
+export class CategoryModule { }
