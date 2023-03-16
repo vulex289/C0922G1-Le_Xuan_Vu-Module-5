@@ -13,10 +13,17 @@ export class CustomerService {
               private http: HttpClient) {
   }
 
-  private URL_API = ' http://localhost:3000/customers';
+  private URL_API = 'http://localhost:3000/customers';
 
   getAll(): Observable<Customer[]> {
     return this.http.get<Customer[]>(this.URL_API);
+  }
+
+  getAllByItemSearch(nameSearch: string, email: string): Observable<Customer[]> {
+    return this.http.get<Customer[]>(this.URL_API + '?name_like=' + nameSearch + '&email_like=' + email);
+  }
+  getAllByItemSearchAndCustomerType(nameSearch: string, email: string, customerTypeId): Observable<Customer[]> {
+    return this.http.get<Customer[]>(this.URL_API + '?name_like=' + nameSearch + '&customerType.id=' + customerTypeId);
   }
 
   findCustomerById(id: string): Observable<Customer> {

@@ -1,114 +1,4 @@
-<!DOCTYPE html>
-<html>
-<head>
-  <meta charset="utf-8"/>
-  <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
-  <meta name="viewport" content="width=device-width, initial-scale=1"/>
 
-  <title>FURAMA_RESORT</title>
-
-  <style type="text/css">
-    h3 {
-      text-align: center;
-      background-color: lightsteelblue;
-      color: white;
-      padding: 10px 0 10px 20px;
-    }
-
-    h1 {
-      font-family: Helvetica;
-      color: white;
-    }
-
-    footer {
-      margin: 10px 0;
-    }
-
-    #furama {
-      text-align: center;
-      font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
-      border-collapse: collapse;
-      width: 100%;
-    }
-
-    #imgtop {
-      background-image: url("https://smartrealtors.vn/wp-content/themes/smr/assets/images/examples/bg-single.jpg");
-    }
-
-    nav {
-
-      background-size: 100%;
-      background-image: url("https://cutewallpaper.org/21x/hianxltb9/Fall-Wallpaper-Hd-Photo-Full-Hd-Navratri-Background-.jpg");
-      background-attachment: fixed;
-    }
-
-    #furama td, #furama th {
-      border: 1px solid #ddd;
-      padding: 8px;
-    }
-
-    #furama tr:nth-child(even) {
-      background-color: #f2f2f2;
-    }
-
-    #furama tr:hover {
-      background-color: #ddd;
-    }
-
-    #furama th {
-      padding-top: 12px;
-      padding-bottom: 12px;
-      background-color: dimgray;
-      color: white;
-      text-align: center;
-    }
-
-    input[type=text], input[type=email], input[type=number], select, option {
-      width: 100%;
-      padding: 12px 0px;
-      margin: 8px 0;
-      display: inline-block;
-      border: 1px solid #ccc;
-      border-radius: 4px;
-      box-sizing: border-box;
-    }
-
-    p {
-      font-family: Century;
-      font-size: 17px;
-    }
-
-    input[type=submit] {
-      width: 300px;
-      background-color: #4CAF50;
-      color: white;
-      padding: 14px 20px;
-      margin: 8px 0;
-      border: none;
-      border-radius: 4px;
-      cursor: pointer;
-      text-align: center;
-    }
-
-    input:invalid {
-      border: 1px solid red;
-    }
-
-    input:valid {
-      border: 1px solid green;
-    }
-
-    input[type=submit]:hover {
-      background-color: #45a049;
-    }
-
-    .notify span {
-      font-size: 15px;
-      color: blue;
-    }
-  </style>
-</head>
-<body style="background-image: url('https://furamavietnam.com/wp-content/uploads/2018/08/BG2.jpg')">
 <div class="container-fluid">
   <div class="row" style="position: relative;">
     <img style="height: 250px;" src="https://www.furama.com/images/bkk_41.jpg" alt="your image description">
@@ -138,9 +28,9 @@
             <img src="https://img.icons8.com/ios-glyphs/1x/edit.png">
           </button>
           </a>
-          <button (click)="getDetailDeleteFacility(facility.id,facility.facilityName)" type="button" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#exampleModal">
-            <img src="https://img.icons8.com/ios-glyphs/1x/delete-forever.png">
-          </button>
+            <button (click)="getDetailDeleteFacility(facility.id,facility.facilityName)" type="button" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#exampleModal">
+              <img src="https://img.icons8.com/ios-glyphs/1x/delete-forever.png">
+            </button>
         </div>
       </div>
     </div>
@@ -228,7 +118,7 @@
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
       <div class="modal-body">
-        <strong>Bạn muốn xóa Customer: </strong>
+        <strong>Bạn muốn xóa Facility: </strong>
         <span id="nameDelete" class="text-danger">{{nameFacility}}</span>
       </div>
       <div class="modal-footer">
@@ -239,6 +129,3 @@
   </div>
 </div>
 
-
-</body>
-</html>

@@ -2,27 +2,29 @@ import {Injectable} from '@angular/core';
 import {Contract} from '../../model/contract/contract';
 import {CustomerService} from '../customer/customer.service';
 import {FacilityService} from '../facility/facility.service';
+import {HttpClient} from '@angular/common/http';
+import {Observable} from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
 })
 export class ContractService {
+  private URL_API = 'http://localhost:3000/contracts';
 
   constructor(private customerService: CustomerService,
-              private facilityService: FacilityService) {
+              private facilityService: FacilityService,
+              private http: HttpClient) {
   }
 
-  contracts: Contract[] = [{
-     startDate: '2020-12-08', deposit: 0, customerId: this.customerService.getAll()[1],
-    facilityId: this.facilityService.getAll()[0], id: 1, endDate: '2020-12-11'
-  },
-    {
-      id: 2, startDate: '2020-09-22', endDate: '2020-09-24', deposit: 1000000, customerId: this.customerService.getAll()[2],
-      facilityId: this.facilityService.getAll()[1]
-    },
-  ];
+  getAll(): Observable<Contract[]> {
+    return this.http.get<Contract[]>(this.URL_API);
+  }
 
-  getAll() {
-    return this.contracts;
+  saveContract(contract: Contract): Observable<Contract> {
+    return this.http.post<Contract>(this.URL_API, contract);
+  }
+
+  searchByDate(dateStart, endDate): Observable<Contract[]> {
+    return this.http.get<Contract[]>(this.URL_API + '?startDate_gte=' + dateStart + '&endDate_lte=' + endDate);
   }
 }

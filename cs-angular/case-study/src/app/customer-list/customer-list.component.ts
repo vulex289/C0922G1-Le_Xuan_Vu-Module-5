@@ -3,6 +3,8 @@ import {CustomerService} from '../service/customer/customer.service';
 import {Customer} from '../model/customer/customer';
 import {Router} from '@angular/router';
 import Swal from 'sweetalert2';
+import {CustomerTypeService} from '../service/customer/customer-type.service';
+import {CustomerType} from '../model/customer/customer-type';
 
 
 @Component({
@@ -12,21 +14,34 @@ import Swal from 'sweetalert2';
 })
 export class CustomerListComponent implements OnInit {
 
-  constructor(private customerService: CustomerService) {
+  constructor(private customerService: CustomerService,
+              private customerTypeService: CustomerTypeService) {
   }
 
 
   idDelete: string;
   nameDelete: string;
   customers: Customer[] = [];
+  nameSearch = '';
+  email = '';
+  customerTypeId = 0;
+  customerTypes: CustomerType[] = [];
 
   ngOnInit(): void {
-    this.getAll();
+    // this.getAll();
+    this.searchCustomer();
+    this.getAllCustomerTypes();
   }
 
-  getAll() {
-    this.customerService.getAll().subscribe((customer) => {
-      this.customers = customer;
+  // getAll() {
+  //   this.customerService.getAll().subscribe((customer) => {
+  //     this.customers = customer;
+  //   });
+  // }
+
+  getAllBySearch() {
+    this.customerService.getAllByItemSearch(this.nameSearch, this.email).subscribe(item => {
+      this.customers = item;
     });
   }
 
@@ -48,11 +63,29 @@ export class CustomerListComponent implements OnInit {
           popup: 'animate__animated animate__fadeOutUp'
         }
       });
+
       this.ngOnInit();
     }, error => {
       console.log(error);
     }, () => {
       console.log('Xóa khách hàng thành công!');
     });
+  }
+
+  getAllCustomerTypes() {
+    this.customerTypeService.getAll().subscribe(customerType => {
+      this.customerTypes = customerType;
+    });
+  }
+
+  searchCustomer() {
+    if (this.customerTypeId > 0) {
+      this.customerService.getAllByItemSearchAndCustomerType(this.nameSearch, this.email, this.customerTypeId).subscribe(item => {
+        this.customers = item;
+      });
+    } else {
+      this.getAllBySearch();
+    }
+
   }
 }

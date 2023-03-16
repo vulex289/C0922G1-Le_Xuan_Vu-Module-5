@@ -1,0 +1,36 @@
+<a routerLink="/contract">
+  <button class="btn btn-primary">Back to ContractList</button>
+</a>
+<h2 class="text-center">CONTRACT INFORMATION</h2>
+<div class="d-flex justify-content-center">
+  <form   class="w-50 border border-2 border-success p-3 rounded" (ngSubmit)="saveContract()" [formGroup]="contractCreateForm" >
+          <div class="mb-3">
+            <label for="recipient-name" class="col-form-label">Ngày bắt đầu:</label>
+            <input formControlName="startDate" type="date" class="form-control" id="recipient-name">
+            <p *ngIf="contractCreateForm.controls.startDate?.touched && contractCreateForm.controls.startDate?.errors?.invalidStartDate" class="text-danger">Bạn nhập sai ngày bắt đầu</p>
+          </div>
+          <div class="mb-3">
+            <label for="recipient-name" class="col-form-label">Ngày kết thúc:</label>
+            <input  formControlName="endDate" type="date" class="form-control">
+            <p *ngIf="contractCreateForm.controls.endDate?.touched && contractCreateForm.errors?.invalidEndDate" class="text-danger">Ngay ket thuc phai lon hon ngay bat dau</p>
+          </div>
+          <div class="mb-3">
+            <label for="recipient-name" class="col-form-label">Tiền gửi</label>
+            <input  formControlName="deposit" type="text" class="form-control">
+          </div>
+          <div class="mb-3">
+            <label class="form-label">Chọn khách hàng</label>
+            <select formControlName="customer" class="form-select" aria-label="Default select example">
+              <option [ngValue]="c"  *ngFor="let c of customers">{{c.name}}</option>
+            </select>
+          </div>
+          <div class="mb-3">
+            <label class="form-label">Chọn dịch vụ</label>
+            <select formControlName="facility" class="form-select" aria-label="Default select example">
+              <option *ngFor="let fa of facilities" [ngValue]="fa" >{{fa.facilityName}}</option>
+            </select>
+          </div>
+      <button [disabled]="contractCreateForm.invalid"  type="submit" class="btn btn-primary text-center  ">Tạo Hợp Đồng</button>
+        </form>
+</div>
+

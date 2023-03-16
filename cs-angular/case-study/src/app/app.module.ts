@@ -12,10 +12,11 @@ import {CustomerEditComponent} from './customer-edit/customer-edit.component';
 import {CustomerListComponent} from './customer-list/customer-list.component';
 import {ContractListComponent} from './contract-list/contract-list.component';
 import {HttpClientModule} from '@angular/common/http';
-import {ReactiveFormsModule} from '@angular/forms';
+import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import {CommonModule} from '@angular/common';
 import { FacilityCreateComponent } from './facility-create/facility-create.component';
 import { FacilityEditComponent } from './facility-edit/facility-edit.component';
+import { ContractCreateComponent } from './contract-create/contract-create.component';
 
 @NgModule({
   declarations: [
@@ -29,15 +30,17 @@ import { FacilityEditComponent } from './facility-edit/facility-edit.component';
     CustomerListComponent,
     ContractListComponent,
     FacilityCreateComponent,
-    FacilityEditComponent
+    FacilityEditComponent,
+    ContractCreateComponent
   ],
-  imports: [
-    CommonModule,
-    HttpClientModule,
-    BrowserModule,
-    AppRoutingModule,
-    ReactiveFormsModule
-  ],
+    imports: [
+        CommonModule,
+        HttpClientModule,
+        BrowserModule,
+        AppRoutingModule,
+        ReactiveFormsModule,
+        FormsModule
+    ],
   providers: [],
   bootstrap: [AppComponent]
 })

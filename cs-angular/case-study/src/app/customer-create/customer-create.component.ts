@@ -30,7 +30,7 @@ export class CustomerCreateComponent implements OnInit {
       phoneNumber: new FormControl('', [Validators.required, Validators.pattern('^(([(]84[)][+]91)|([(]84[)][+]90)|090|091)[0-9]{7}$')]),
       email: new FormControl('', Validators.email),
       address: new FormControl('', Validators.required),
-      customerType: new FormControl(this.customerTypes)
+      customerType: new FormControl(this.customerTypes.find(a => a.id === 2))
     });
   }
 

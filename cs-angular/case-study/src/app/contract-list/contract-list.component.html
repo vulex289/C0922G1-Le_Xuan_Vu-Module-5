@@ -1,7 +1,12 @@
 <h1 class="text-center my-3">LIST CONTRACT </h1>
-<button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal"
-        data-bs-whatever="@mdo">ADD NEW CONTRACT
-</button>
+<a routerLink="/contract/create">
+  <button type="button" class="btn btn-primary">ADD NEW CONTRACT</button>
+</a>
+<div>
+  <input type="date" [(ngModel)]="dateStart">
+  <input type="date" [(ngModel)]="dateEnd">
+  <button type="button" (click)="searchByDate()">Search</button>
+</div>
 <table class="table text-center">
   <thead>
   <tr>
@@ -16,11 +21,11 @@
   </thead>
   <tbody class="table-group-divider">
   <tr *ngFor="let contract of contracts, index as i">
-    <td>{{i+1}}</td>
-    <td>{{contract.facilityId.facilityName}}</td>
-    <td>{{contract.customerId.name}}</td>
-    <td>{{contract.startDate}}</td>
-    <td>{{contract.endDate}}</td>
+    <td>{{i + 1}}</td>
+    <td>{{contract.facility.facilityName}}</td>
+    <td>{{contract.customer.name}}</td>
+    <td>{{contract.startDate | date: 'dd-MM-yyyy'}}</td>
+    <td>{{contract.endDate | date: 'dd-MM-yyyy'}}</td>
     <td>{{contract.deposit}}</td>
     <td>
       <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#addAttachFacility"
@@ -33,62 +38,7 @@
   </tr>
   </tbody>
 </table>
-<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-  <div class="modal-dialog">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h1 class="modal-title fs-5" id="exampleModalLabel">Thêm Mới Hợp Đồng Chi Tiết</h1>
-        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-      </div>
-      <div class="modal-body">
-        <form>
-          <div class="mb-3">
-            <label for="recipient-name" class="col-form-label">Ngày bắt đầu:</label>
-            <input type="text" class="form-control" id="recipient-name">
-          </div>
-          <div class="mb-3">
-            <label for="recipient-name" class="col-form-label">Ngày kết thúc:</label>
-            <input type="text" class="form-control">
-          </div>
-          <div class="mb-3">
-            <label for="recipient-name" class="col-form-label">Tiền gửi</label>
-            <input type="text" class="form-control">
-          </div>
-          <div class="mb-3">
-            <label for="recipient-name" class="col-form-label">Tổng tiền</label>
-            <input type="text" class="form-control" disabled readonly aria-label="Disabled input example">
-          </div>
-          <div class="mb-3">
-            <label class="form-label">Chọn khách hàng</label>
-            <select class="form-select" aria-label="Default select example">
-              <option value="1">1</option>
-              <option value="2">2</option>
-              <option value="3">3</option>
-            </select>
-          </div>
-          <div class="mb-3">
-            <label class="form-label">Chọn dịch vụ</label>
-            <select class="form-select" aria-label="Default select example">
-              <option value="1">1</option>
-              <option value="2">2</option>
-              <option value="3">3</option>
-            </select>
-          </div>
-          <div class="mb-3">
-            <label class="form-label">Dịch vụ đi kèm </label>
-            <button type="button" class="btn btn-primary" data-bs-toggle="modal"
-                    data-bs-target="#addAttachFacility" data-bs-whatever="@mdo">+
-            </button>
-          </div>
-        </form>
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Hủy Bỏ</button>
-        <button type="button" class="btn btn-primary">Tạo Hợp Đồng</button>
-      </div>
-    </div>
-  </div>
-</div>
+
 <!--dịch vụ đi kèm-->
 <div class="modal fade" id="addAttachFacility" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
   <div class="modal-dialog">
@@ -108,7 +58,7 @@
             </select>
           </div>
           <div class="mb-3">
-            <label for="recipient-name" class="col-form-label">Số lượng</label>
+            <label class="col-form-label">Số lượng</label>
             <input type="number" class="form-control">
           </div>
         </form>

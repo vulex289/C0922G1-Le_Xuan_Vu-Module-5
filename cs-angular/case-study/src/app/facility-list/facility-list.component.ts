@@ -28,7 +28,7 @@ export class FacilityListComponent implements OnInit {
 
   getDetailDeleteFacility(id: number, facilityName: string) {
     this.idFacility = id;
-    this.nameFacility = name;
+    this.nameFacility = facilityName;
   }
 
   deleteFacility() {

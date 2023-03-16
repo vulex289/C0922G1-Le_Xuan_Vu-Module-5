@@ -13,12 +13,27 @@ export class ContractListComponent implements OnInit {
   }
 
   contracts: Contract[] = [];
+  dateStart = '';
+  dateEnd = '';
 
   ngOnInit(): void {
-    this.getAll();
+    this.searchByDate();
   }
 
   getAll() {
-    return this.contracts = this.contractService.getAll();
+    return this.contractService.getAll().subscribe((contract) => {
+      this.contracts = contract;
+    });
+  }
+
+  searchByDate() {
+    if (this.dateEnd === '' && this.dateStart === '') {
+      console.log(this.dateStart);
+      this.getAll();
+    } else {
+      this.contractService.searchByDate(this.dateStart, this.dateEnd).subscribe(item => {
+        this.contracts = item;
+      });
+    }
   }
 }

@@ -1,19 +1,19 @@
-
 <div class="row container-fluid">
   <h1 class="text-center my-3">LIST CUSTOMER </h1>
   <div class="row my-1">
     <div class="col-md-6"></div>
     <div class="col-md-6">
-<!--      <form class="d-flex mx-3" role="search">-->
-<!--        <input class="form-control me-2" name="nameSearch" type="search" placeholder="nameSearch"-->
-<!--               aria-label="Search">-->
-<!--        <input class="form-control me-2" name="email" type="search" placeholder="SearchByEmail" aria-label="Search">-->
-<!--        <select name="customerTypeId">-->
-<!--          <option value="" ></option>-->
-<!--          <option></option>-->
-<!--        </select>-->
-<!--        <button class="btn btn-outline-success" type="submit">Search</button>-->
-<!--      </form>-->
+      <div>
+        <input class="form-control me-2" [(ngModel)]="nameSearch" type="search" placeholder="nameSearch"
+               aria-label="Search">
+        <input class="form-control me-2" [(ngModel)]="email" type="search" placeholder="SearchByEmail"
+               aria-label="Search">
+        <select name="customerTypeId" [(ngModel)]="customerTypeId">
+          <option [ngValue]="0"></option>
+          <option *ngFor="let ct of customerTypes" [ngValue]="ct.id">{{ct.name}}</option>
+        </select>
+        <button class="btn btn-outline-success" type="button" (click)="searchCustomer()">Search</button>
+      </div>
     </div>
   </div>
   <a routerLink="/customer/create">
@@ -37,22 +37,22 @@
     </thead>
     <tbody class="table-group-divider">
     <tr *ngFor="let customer of customers, index as i">
-      <td>{{i+1}}</td>
-     <td>{{customer.name}}</td>
-     <td>{{customer.dateOfBirth | date: 'dd/mm/yyyy'}}</td>
-     <td>
-       <ng-container *ngIf="customer.gender === true">
-         Nam
-       </ng-container>
-       <ng-container *ngIf="!(customer.gender === true)">
-         Nữ
-       </ng-container>
-     </td>
-     <td>{{customer.idCard}}</td>
-     <td>{{customer.phoneNumber}}</td>
-     <td>{{customer.email}}</td>
-     <td>{{customer.address}}</td>
-     <td>{{customer.customerType.name}}</td>
+      <td>{{i + 1}}</td>
+      <td>{{customer.name}}</td>
+      <td>{{customer.dateOfBirth | date: 'dd/mm/yyyy'}}</td>
+      <td>
+        <ng-container *ngIf="customer.gender === true">
+          Nam
+        </ng-container>
+        <ng-container *ngIf="!(customer.gender === true)">
+          Nữ
+        </ng-container>
+      </td>
+      <td>{{customer.idCard}}</td>
+      <td>{{customer.phoneNumber}}</td>
+      <td>{{customer.email}}</td>
+      <td>{{customer.address}}</td>
+      <td>{{customer.customerType.name}}</td>
 
       <td>
         <a routerLink="/customer/edit/{{customer.id}}">
@@ -62,7 +62,8 @@
       </td>
       <td>
         <!-- Button trigger modal -->
-        <button (click)="getInfoCustomerDelete(customer.id,customer.name)" type="button" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#exampleModal">
+        <button (click)="getInfoCustomerDelete(customer.id,customer.name)" type="button" class="btn btn-danger"
+                data-bs-toggle="modal" data-bs-target="#exampleModal">
           <img src="https://img.icons8.com/ios-glyphs/1x/delete-forever.png">
         </button>
       </td>
@@ -72,20 +73,20 @@
   <!-- Modal -->
   <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog">
-        <div class="modal-content">
-          <div class="modal-header">
-            <h1 class="modal-title fs-5" id="exampleModalLabel">DELETE CUSTOMER</h1>
-            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-          </div>
-          <div class="modal-body">
-            <strong>Bạn muốn xóa Customer: </strong>
-            <span id="nameDelete" class="text-danger">{{nameDelete}}</span>
-          </div>
-          <div class="modal-footer">
-            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">CANCEL</button>
-            <button  type="submit" class="btn btn-primary" data-bs-dismiss="modal" (click)="deleteCustomer()">OK</button>
-          </div>
+      <div class="modal-content">
+        <div class="modal-header">
+          <h1 class="modal-title fs-5" id="exampleModalLabel">DELETE CUSTOMER</h1>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
         </div>
+        <div class="modal-body">
+          <strong>Bạn muốn xóa Customer: </strong>
+          <span id="nameDelete" class="text-danger">{{nameDelete}}</span>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">CANCEL</button>
+          <button type="submit" class="btn btn-primary" data-bs-dismiss="modal" (click)="deleteCustomer()">OK</button>
+        </div>
+      </div>
     </div>
   </div>
 </div>

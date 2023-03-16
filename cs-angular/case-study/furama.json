@@ -41,6 +41,17 @@
       "phoneNumber": "0789555872",
       "email": "nguyent289@gmail.com",
       "address": "K14/15 Nguyễn Thị Thập, Thanh Khê, Đà Nẵng"
+    },
+    {
+      "id": "KH-6868",
+      "name": "Lê Xuân Vũ",
+      "dateOfBirth": "2023-03-08",
+      "gender": true,
+      "idCard": "222222222",
+      "phoneNumber": "0907444444",
+      "email": "2@g",
+      "address": "2",
+      "customerType": []
     }
   ],
   "customerTypes": [
@@ -209,16 +220,17 @@
       "descriptionOtherConvenience": "Có ghế tình yêu",
       "poolArea": 0,
       "numberOfFloors": 3,
-      "facilityFree": "",
+      "facilityFree": " ",
       "rentType": {
         "id": 2,
         "rentTypeName": "month"
       },
       "facilityType": {
         "id": 2,
-        "facilityTypeName": "House"
+        "facilityTypeName": "house"
       },
-      "url": "https://i.pinimg.com/736x/a7/b3/c6/a7b3c60afae4a89a3fb12fc8d054156d.jpg"
+      "url": "https://i.pinimg.com/736x/a7/b3/c6/a7b3c60afae4a89a3fb12fc8d054156d.jpg",
+      "facilityName": "MatriVelet"
     },
     {
       "id": 7,
@@ -303,179 +315,128 @@
       },
       "url": "https://www.furama.com/images/ibe_Safari_Suite.jpg",
       "id": 10
-    },
+    }
+  ],
+  "contracts": [
     {
-      "id": 11,
-      "facilityName": "aaaaaaaaaaa",
-      "area": "23",
-      "cost": 232333,
-      "maxPeople": 2,
-      "rentType": {
+      "id": 1,
+      "startDate": "2022-10-20",
+      "endDate": "2022-10-21",
+      "deposit": 1000000,
+      "customer": {
         "id": 2,
-        "rentTypeName": "month"
+        "name": "Nguyễn Văn Dương",
+        "dateOfBirth": "1994-09-19",
+        "gender": true,
+        "idCard": "201286494",
+        "phoneNumber": "0789123456",
+        "email": "nguyent289@gmail.com",
+        "address": "K14/15 Nguyễn Thị Thập, Thanh Khê, Đà Nẵng",
+        "customerType": {
+          "id": 2,
+          "name": "Vip"
+        }
       },
-      "facilityType": {
+      "facility": {
+        "id": 3,
+        "facilityName": "Deluxe Ajax",
+        "area": 200,
+        "cost": 1000000,
+        "maxPeople": 3,
+        "standardRoom": "",
+        "descriptionOtherConvenience": "",
+        "poolArea": 0,
+        "numberOfFloors": 0,
+        "facilityFree": "",
+        "rentType": {
+          "id": 4,
+          "rentTypeName": "day"
+        },
+        "facilityType": {
+          "id": 1,
+          "facilityTypeName": "Villa"
+        },
+        "facilityImage": "https://pix10.agoda.net/hotelImages/2601996/0/7b0a95ae1cbf0f0650ff89ff15cbfbfb.jpg?ca=7&ce=1&s=1024x768"
+      }
+    },
+    {
+      "id": 2,
+      "startDate": "2023-03-17",
+      "endDate": "2024-09-16",
+      "deposit": "22222",
+      "facility": {
+        "facilityName": "Superior Angular",
+        "area": 150,
+        "cost": 400000,
+        "maxPeople": 2,
+        "standardRoom": "",
+        "descriptionOtherConvenience": "",
+        "poolArea": 0,
+        "numberOfFloors": 0,
+        "facilityFree": "Massage người mù",
+        "rentType": {
+          "id": 4,
+          "rentTypeName": "Giờ"
+        },
+        "facilityType": {
+          "id": 3,
+          "facilityTypeName": "Room"
+        },
+        "url": "https://www.furama.com/images/ibe_Superior.jpg",
+        "id": 2
+      },
+      "customer": {
+        "id": "KH-6868",
+        "name": "Lê Xuân Vũ",
+        "dateOfBirth": "2023-03-08",
+        "gender": true,
+        "idCard": "222222222",
+        "phoneNumber": "0907444444",
+        "email": "2@g",
+        "address": "2",
+        "customerType": []
+      }
+    },
+    {
+      "id": 3,
+      "startDate": "2023-03-17",
+      "endDate": "2023-03-31",
+      "deposit": "2000000",
+      "facility": {
+        "id": 3,
+        "facilityName": "Deluxe Ajax",
+        "area": 200,
+        "cost": 1000000,
+        "maxPeople": 3,
+        "standardRoom": "",
+        "descriptionOtherConvenience": "",
+        "poolArea": 0,
+        "numberOfFloors": 0,
+        "facilityFree": "Massage người mù",
+        "rentType": {
+          "id": 4,
+          "rentTypeName": "day"
+        },
+        "facilityType": {
+          "id": 3,
+          "facilityTypeName": "Room"
+        },
+        "url": "https://www.furama.com/images/ibe-Deluxe-Room.jpg"
+      },
+      "customer": {
         "id": 2,
-        "facilityTypeName": "house"
-      },
-      "standardRoom": "aaaaaa",
-      "descriptionOtherConvenience": "aaaaaaaaa",
-      "poolArea": 23,
-      "numberOfFloors": 2,
-      "facilityFree": "aaaaaaa",
-      "url": "aaaaaaaaaaaaaaaaaaaaaa"
-    },
-    {
-      "id": 12,
-      "facilityName": "",
-      "area": "",
-      "cost": "",
-      "maxPeople": "",
-      "rentType": [],
-      "facilityType": [],
-      "standardRoom": "",
-      "descriptionOtherConvenience": "",
-      "poolArea": "",
-      "numberOfFloors": "",
-      "facilityFree": "",
-      "url": ""
-    },
-    {
-      "id": 13,
-      "facilityName": "",
-      "area": "",
-      "cost": "",
-      "maxPeople": "",
-      "rentType": [],
-      "facilityType": [],
-      "standardRoom": "",
-      "descriptionOtherConvenience": "",
-      "poolArea": "",
-      "numberOfFloors": "",
-      "facilityFree": "",
-      "url": ""
-    },
-    {
-      "id": 14,
-      "facilityName": "",
-      "area": "",
-      "cost": "",
-      "maxPeople": "",
-      "rentType": [],
-      "facilityType": [],
-      "standardRoom": "",
-      "descriptionOtherConvenience": "",
-      "poolArea": "",
-      "numberOfFloors": "",
-      "facilityFree": "",
-      "url": ""
-    },
-    {
-      "id": 15,
-      "facilityName": "",
-      "area": "",
-      "cost": "",
-      "maxPeople": "",
-      "rentType": [],
-      "facilityType": [],
-      "standardRoom": "",
-      "descriptionOtherConvenience": "",
-      "poolArea": "",
-      "numberOfFloors": "",
-      "facilityFree": "",
-      "url": ""
-    },
-    {
-      "id": 16,
-      "facilityName": "",
-      "area": "",
-      "cost": "",
-      "maxPeople": "",
-      "rentType": [],
-      "facilityType": [],
-      "standardRoom": "",
-      "descriptionOtherConvenience": "",
-      "poolArea": "",
-      "numberOfFloors": "",
-      "facilityFree": "",
-      "url": ""
-    },
-    {
-      "id": 17,
-      "facilityName": "",
-      "area": "",
-      "cost": "",
-      "maxPeople": "",
-      "rentType": [],
-      "facilityType": [],
-      "standardRoom": "",
-      "descriptionOtherConvenience": "",
-      "poolArea": "",
-      "numberOfFloors": "",
-      "facilityFree": "",
-      "url": ""
-    },
-    {
-      "id": 18,
-      "facilityName": "",
-      "area": "",
-      "cost": "",
-      "maxPeople": "",
-      "rentType": [],
-      "facilityType": [],
-      "standardRoom": "",
-      "descriptionOtherConvenience": "",
-      "poolArea": "",
-      "numberOfFloors": "",
-      "facilityFree": "",
-      "url": ""
-    },
-    {
-      "id": 19,
-      "facilityName": "",
-      "area": "",
-      "cost": "",
-      "maxPeople": "",
-      "rentType": [],
-      "facilityType": [],
-      "standardRoom": "",
-      "descriptionOtherConvenience": "",
-      "poolArea": "",
-      "numberOfFloors": "",
-      "facilityFree": "",
-      "url": ""
-    },
-    {
-      "id": 20,
-      "facilityName": "",
-      "area": "",
-      "cost": "",
-      "maxPeople": "",
-      "rentType": [],
-      "facilityType": [],
-      "standardRoom": "",
-      "descriptionOtherConvenience": "",
-      "poolArea": "",
-      "numberOfFloors": "",
-      "facilityFree": "",
-      "url": ""
-    },
-    {
-      "id": 21,
-      "facilityName": "aaaaaaaaaaaaaaaaaaa",
-      "area": "222222",
-      "cost": 222222,
-      "maxPeople": 2222,
-      "rentType": {
-        "id": 3,
-        "rentTypeName": "day"
-      },
-      "facilityType": {
-        "id": 3,
-        "facilityTypeName": "room"
-      },
-      "facilityFree": "2222222222",
-      "url": "2222222222"
+        "customerType": {
+          "id": "2",
+          "name": "Vip"
+        },
+        "name": "Nguyễn Văn Dương",
+        "dateOfBirth": "1994-09-19",
+        "gender": true,
+        "idCard": "201286494",
+        "phoneNumber": "0789123456",
+        "email": "nguyent289@gmail.com",
+        "address": "K14/15 Nguyễn Thị Thập, Thanh Khê, Đà Nẵng"
+      }
     }
   ]
 }
