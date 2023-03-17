@@ -1,0 +1,85 @@
+<h2 class="text-center">BUS STATION INFORMATION</h2>
+<div class="d-flex justify-content-center">
+  <form *ngIf="carCreateForm" [formGroup]="carCreateForm" (ngSubmit)="createCar()"
+        class="w-50 border border-2 border-success p-3 rounded">
+    <div class="mb-3">
+      <label for="recipient-name" class="col-form-label">ID_CARD</label>
+      <input type="text" formControlName="id" class="form-control">
+      <p class="text-danger"
+         *ngIf="carCreateForm.controls.id?.touched && carCreateForm.controls.id?.errors?.required ">Bạn không
+        được để trống</p>
+    </div>
+    <div class="mb-3">
+      <label class="form-label">CAR_TYPE</label>
+      <select formControlName="carType" class="form-select" aria-label="Default select example">
+        <option [ngValue]="c" *ngFor="let c of carTypes">{{c.name}}</option>
+      </select>
+      <p class="text-danger"
+         *ngIf="carCreateForm.controls.carType?.touched && carCreateForm.controls.carType?.errors?.required ">Bạn không
+        được để trống</p>
+    </div>
+    <div class="mb-3">
+      <label for="recipient-name" class="col-form-label">COMPANY_NAME</label>
+      <input type="text" formControlName="companyName" class="form-control">
+      <p class="text-danger"
+         *ngIf="carCreateForm.controls.companyName?.touched && carCreateForm.controls.companyName?.errors?.required ">
+        Bạn không được để trống</p>
+    </div>
+    <div class="mb-3">
+      <label class="form-label">DEPARTURE</label>
+      <select formControlName="departure" class="form-select" aria-label="Default select example">
+        <option [ngValue]="c" *ngFor="let c of locations">{{c.name}}</option>
+      </select>
+      <p class="text-danger"
+         *ngIf="carCreateForm.controls.departure?.touched && carCreateForm.controls.departure?.errors?.required ">Bạn
+        không được để trống</p>
+    </div>
+    <div class="mb-3">
+      <label class="form-label">DESTINATION</label>
+      <select formControlName="destination" class="form-select" aria-label="Default select example">
+        <option [ngValue]="c" *ngFor="let c of locations">{{c.name}}</option>
+      </select>
+      <p class="text-danger"
+         *ngIf="carCreateForm.controls.destination?.touched && carCreateForm.controls.destination?.errors?.required ">Bạn
+        không được để trống</p>
+    </div>
+    <div class="mb-3">
+      <label for="recipient-name" class="col-form-label">PHONE NUMBER</label>
+      <input type="text" formControlName="phoneNumber" class="form-control">
+      <p class="text-danger"
+         *ngIf="carCreateForm.controls.phoneNumber?.touched && carCreateForm.controls.phoneNumber?.errors?.required ">
+        Bạn không được để trống</p>
+      <p class="text-danger"
+         *ngIf="carCreateForm.controls.phoneNumber?.dirty && carCreateForm.controls.phoneNumber?.errors?.pattern ">Bạn
+        phải nhập đúng định dạng </p>
+    </div>
+    <div class="mb-3">
+      <label for="recipient-name" class="col-form-label">EMAIL</label>
+      <input type="text" formControlName="email" class="form-control">
+      <p class="text-danger"
+         *ngIf="carCreateForm.controls.email?.touched && carCreateForm.controls.email?.errors?.required ">Bạn không được
+        để trống</p>
+      <p class="text-danger"
+         *ngIf="carCreateForm.controls.email?.dirty && carCreateForm.controls.email?.errors?.email ">Bạn phải nhập đúng
+        định dạng email</p>
+    </div>
+    <div class="mb-3">
+      <label for="recipient-name" class="col-form-label">START_HOUR:</label>
+      <input type="time" formControlName="startHour" class="form-control" id="recipient-name">
+      <p class="text-danger"
+         *ngIf="carCreateForm.controls.startHour?.touched && carCreateForm.controls.startHour?.errors?.required ">Bạn
+        không được để trống</p>
+    </div>
+    <div class="mb-3">
+      <label for="recipient-name" class="col-form-label">END_HOUR:</label>
+      <input type="time" formControlName="endHour" class="form-control">
+      <p class="text-danger"
+         *ngIf="carCreateForm.controls.endHour?.touched && carCreateForm.controls.endHour?.errors?.required ">Bạn không
+        được để trống</p>
+    </div>
+    <a routerLink="/">
+      <button class="btn btn-primary">CANCEL</button>
+    </a>
+    <button [disabled]="carCreateForm.invalid" type="submit" class="btn btn-primary text-center  ">SAVE</button>
+  </form>
+</div>

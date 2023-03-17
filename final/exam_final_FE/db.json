@@ -1,0 +1,52 @@
+{
+  "pointRuns": [
+    {
+      "id": 1,
+      "name": "Đà Nẵng"
+    },
+    {
+      "id": 2,
+      "name": "Huế"
+    },
+    {
+      "id": 3,
+      "name": "Quảng Nam"
+    }
+  ],
+  "cars": [
+    {
+      "id": "1234",
+      "carType": "Giường nằm",
+      "name": "Mai Linh",
+      "pointRunStart": {
+        "id": 1,
+        "name": "Đà Nẵng"
+      },
+      "pointRunEnd": {
+        "id": 2,
+        "name": "Huế"
+      },
+      "phoneNumber": "0932222222",
+      "email": "sssssss@gm.com",
+      "startHour": "13:2333333333",
+      "endHour": "15:30"
+    },
+    {
+      "id": "1111",
+      "carType": "Ghế ngồi",
+      "name": "Hoàng Long",
+      "pointRunStart": {
+        "id": 2,
+        "name": "Huế"
+      },
+      "pointRunEnd": {
+        "id": 1,
+        "name": "Đà Nẵng"
+      },
+      "phoneNumber": "0939555178",
+      "email": "hoangLong@gmamil.com",
+      "startHour": "10:20",
+      "endHour": "13:00"
+    }
+  ]
+}
