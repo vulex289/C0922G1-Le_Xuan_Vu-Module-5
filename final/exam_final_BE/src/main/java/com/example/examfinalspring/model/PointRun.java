@@ -1,4 +1,5 @@
 package com.example.examfinalspring.model;
+import com.fasterxml.jackson.annotation.JsonBackReference;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 
 import javax.persistence.Column;
@@ -13,12 +14,11 @@ public class Location {
     private int id;
     @Column(columnDefinition = "varchar(50)")
     private String name;
-
+    @JsonBackReference
     @OneToMany(mappedBy = "destination")
-    @JsonIgnore
     private Set<Car> carSet;
+    @JsonBackReference
     @OneToMany(mappedBy = "departure")
-    @JsonIgnore
     private Set<Car> carSet1;
 
 

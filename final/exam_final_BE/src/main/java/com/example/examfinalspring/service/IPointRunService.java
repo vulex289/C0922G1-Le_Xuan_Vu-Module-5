@@ -1,9 +1,9 @@
 package com.example.examfinalspring.service;
 
-import com.example.examfinalspring.model.Location;
+import com.example.examfinalspring.model.PointRun;
 
 import java.util.List;
 
 public interface ILocationService{
-    List<Location> getAll();
+    List<PointRun> getAll();
 }
